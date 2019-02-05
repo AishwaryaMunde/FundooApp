@@ -18,6 +18,10 @@ public class UserDatabaseImpl implements IUserDatabase
 	SessionFactory factory = config.buildSessionFactory(registry);
 	Session session = factory.openSession(); //open session method give the obj of session
 	Transaction transaction = session.beginTransaction();
+	
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.fundooapp.dao.IUserDatabase#fetch(java.lang.String, java.lang.String)
+	 */
 	public void fetch(String userName , String userPass) 
 	{		
 		boolean userFound=false;		
@@ -35,23 +39,51 @@ public class UserDatabaseImpl implements IUserDatabase
 	    factory.close();
 	}
 
-	public void save(String firstName,String lastName,String mobileno,String emailid,String userName,String userPass) 
+	public void save(Fundoouserdata userData) 
 	{		
-		if(utility.emailSend(emailid))
+		if(utility.emailSend(userData.getEmailId()))
 		{
-			Fundoouserdata userData = new Fundoouserdata();
-			userData.setFirstName(firstName);
-			userData.setLastName(lastName);
-			userData.setMobileNo(mobileno);
-			userData.setEmailId(emailid);
-			userData.setUserName(userName);
-			userData.setPassword(userPass);
 			session.save(userData);
 	    	System.out.println("Registered Suceessfully");
 	    	transaction.commit();
 	    	session.close();
 	    	factory.close();	
-		}
-		
+		}		
+	}
+	
+	public void update(String userName , String mobileno) 
+	{
+		Query query = session.createQuery("update Fundoouserdata set MobileNo=:mobileno where UserName= :userName");
+		query.setParameter("mobileno", mobileno);
+		query.setParameter("userName",userName);
+		int count = query.executeUpdate();
+		System.out.println(count+" records updated");
+		transaction.commit();
+	    session.close();
+	    factory.close();
+	}
+
+	public void fetchById(String userName) 
+	{
+		Query query = session.createQuery("from Fundoouserdata where UserName= :uname");
+		query.setParameter("uname",userName);
+		List list = query.list();
+	    if(list != null && list.size()>0)
+	    {
+	    	System.out.println(list);
+	    }
+	    transaction.commit();
+	    session.close();
+	    factory.close();
+	}
+
+	public void delete(String userName) 
+	{
+		Query query = session.createQuery("delete Fundoouserdata where UserName= :userName");
+		query.setParameter("userName", userName);
+		query.executeUpdate();
+		transaction.commit();
+	    session.close();
+	    factory.close();				
 	}
 }

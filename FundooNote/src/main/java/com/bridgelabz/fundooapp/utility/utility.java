@@ -15,6 +15,10 @@ import javax.mail.internet.MimeMessage;
 
 public class utility 
 {
+	/**This method is to encrypt the password using MD5 algorithm 
+	 * @param input is user input which you wants to encrypt
+	 * @return
+	 */
 	public static String encryption(String input)	
 	{
 		try { 			  
@@ -41,6 +45,9 @@ public class utility
         }
 	}
 	
+	/**This method send the mail to particular mail id entered by user 
+	 * @param toEmail is mail id entered by user where you want to sent mail
+	 */
 	public static boolean emailSend(String toEmail)
 	{
 		boolean isSent=false;
@@ -60,17 +67,17 @@ public class utility
 		Session session = Session.getInstance(props, auth);		
 		try
 	    {
-	      MimeMessage msg = new MimeMessage(session);	    
-	      msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
-	      msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
-	      msg.setSubject("Aishwarya", "UTF-8");
-	      msg.setText("http://localhost:8081/LoginMvc/index.jsp", "UTF-8");
-	      msg.setSentDate(new Date());
-	      msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
-	      System.out.println("Message is ready");
-	      Transport.send(msg);  
-	      System.out.println("Email Sent Successfully!!");
-	      isSent = true;
+			MimeMessage msg = new MimeMessage(session);	    
+		    msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
+		    msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
+		    msg.setSubject("Aishwarya", "UTF-8");
+		    msg.setText("http://localhost:8081/LoginMvc/index.jsp", "UTF-8");
+		    msg.setSentDate(new Date());
+		    msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
+		    System.out.println("Message is ready");
+		    Transport.send(msg);  		//This method send the mail
+		    System.out.println("Email Sent Successfully!!");
+		    isSent = true;
 		  }
 		  catch (Exception e) {
 		      e.printStackTrace();
