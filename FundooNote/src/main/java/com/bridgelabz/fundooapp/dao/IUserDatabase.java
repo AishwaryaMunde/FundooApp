@@ -1,5 +1,7 @@
 package com.bridgelabz.fundooapp.dao;
 
+import java.util.List;
+
 import com.bridgelabz.fundooapp.model.Fundoouserdata;
 
 public interface IUserDatabase 
@@ -8,7 +10,7 @@ public interface IUserDatabase
 	 * @param userName is user name entered input
 	 * @param userPass is user password entered password
 	 */
-	public void fetch(String userName , String userPass);
+	public  String fetch(String userName , String userPass);
 	
 	/**This method save the data entered by user in databse 
 	 * @param userData is object of Fundoouserdata pojo class
@@ -19,7 +21,7 @@ public interface IUserDatabase
 	 * URL which is primary key in database  
 	 * @param userName is user name sent through URL 
 	 */
-	public void fetchById(String userName);
+	public String fetchById(String userName);
 	
 	/**This method update the particular data in database using unique userName 
 	 * @param userName is unique key to identify record in database 

@@ -1,5 +1,6 @@
 package com.bridgelabz.fundooapp.dao;
 
+import java.io.File;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -13,7 +14,8 @@ import com.bridgelabz.fundooapp.utility.utility;
 
 public class UserDatabaseImpl implements IUserDatabase
 {
-	Configuration config = new Configuration().configure().addAnnotatedClass(Fundoouserdata.class);
+	File file = new File("/home/admin1/Desktop/FundooNote/FundooNote/src/main/webapp/WEB-INF/hibernate.cfg.xml");
+	Configuration config = new Configuration().configure(file).addAnnotatedClass(Fundoouserdata.class);
 	ServiceRegistry registry = new ServiceRegistryBuilder().applySettings(config.getProperties()).buildServiceRegistry(); 
 	SessionFactory factory = config.buildSessionFactory(registry);
 	Session session = factory.openSession(); //open session method give the obj of session
@@ -22,7 +24,7 @@ public class UserDatabaseImpl implements IUserDatabase
 	/* (non-Javadoc)
 	 * @see com.bridgelabz.fundooapp.dao.IUserDatabase#fetch(java.lang.String, java.lang.String)
 	 */
-	public void fetch(String userName , String userPass) 
+	public String fetch(String userName , String userPass) 
 	{		
 		boolean userFound=false;		
 	    Query query = session.createQuery("from Fundoouserdata where UserName= :uname and Password= :password");
@@ -37,6 +39,7 @@ public class UserDatabaseImpl implements IUserDatabase
 	    transaction.commit();
 	    session.close();
 	    factory.close();
+		return userName;
 	}
 
 	public void save(Fundoouserdata userData) 
@@ -63,7 +66,7 @@ public class UserDatabaseImpl implements IUserDatabase
 	    factory.close();
 	}
 
-	public void fetchById(String userName) 
+	public String fetchById(String userName) 
 	{
 		Query query = session.createQuery("from Fundoouserdata where UserName= :uname");
 		query.setParameter("uname",userName);
@@ -75,6 +78,7 @@ public class UserDatabaseImpl implements IUserDatabase
 	    transaction.commit();
 	    session.close();
 	    factory.close();
+	    return userName;
 	}
 
 	public void delete(String userName) 

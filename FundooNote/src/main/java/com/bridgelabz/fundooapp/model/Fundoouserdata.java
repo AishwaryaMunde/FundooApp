@@ -2,66 +2,74 @@ package com.bridgelabz.fundooapp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="Fundoouserdata")
 public class Fundoouserdata
 {
-	@Column
-	String FirstName;
-	@Column
-	String LastName;
-	@Column
-	String MobileNo;
-	@Column
-	String EmailId;
 	@Id
-	String UserName;
-	@Column
-	String Password;
+	//@GenericGenerator(name = "user", strategy = "increment")
+	//@GeneratedValue(generator = "user")
+	@Column(name="Id")
+	private int id;
+	@Column(name="FirstName")
+	String firstName;
+	@Column(name="LastName")
+	String lastName;
+	@Column(name="MobileNo")
+	String mobileNo;
+	@Column(name="Emailid")
+	String emailId;
+	@Column(name="UserName")
+	String userName;
+	@Column(name="Password")
+	String password;
 	
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		firstName = firstName;
 	}
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		lastName = lastName;
 	}
 	public String getMobileNo() {
-		return MobileNo;
+		return mobileNo;
 	}
 	public void setMobileNo(String mobileNo) {
-		MobileNo = mobileNo;
+		mobileNo = mobileNo;
 	}
 	public String getEmailId() {
-		return EmailId;
+		return emailId;
 	}
 	public void setEmailId(String emailId) {
-		EmailId = emailId;
+		emailId = emailId;
 	}
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 	public void setUserName(String userName) {
-		UserName = userName;
+		userName = userName;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		password = password;
 	}
 	@Override
 	public String toString() {
-		return "Userdata [FirstName=" + FirstName + ", LastName=" + LastName + ", MobileNo=" + MobileNo + ", EmailId="
-				+ EmailId + ", UserName=" + UserName + ", Password=" + Password + "]";
+		return "Userdata [FirstName=" + firstName + ", LastName=" + lastName + ", MobileNo=" + mobileNo + ", EmailId="
+				+ emailId + ", UserName=" + userName + ", Password=" + password + "]";
 	}
 	
 }

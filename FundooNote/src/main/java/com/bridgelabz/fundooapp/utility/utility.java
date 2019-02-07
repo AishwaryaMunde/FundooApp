@@ -67,10 +67,12 @@ public class utility
 		Session session = Session.getInstance(props, auth);		
 		try
 	    {
+			//This class is to create messge
 			MimeMessage msg = new MimeMessage(session);	    
 		    msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
 		    msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
 		    msg.setSubject("Aishwarya", "UTF-8");
+		    //setText method is to write message which we want to send with that mail 
 		    msg.setText("http://localhost:8081/LoginMvc/index.jsp", "UTF-8");
 		    msg.setSentDate(new Date());
 		    msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
