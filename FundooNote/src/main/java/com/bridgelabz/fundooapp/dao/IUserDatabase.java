@@ -15,7 +15,7 @@ public interface IUserDatabase
 	/**This method save the data entered by user in databse 
 	 * @param userData is object of Fundoouserdata pojo class
 	 */
-	public void save(Fundoouserdata userData);
+	public Fundoouserdata save(Fundoouserdata userData);
 	
 	/**This method fetch data of particular user where user name sent through 
 	 * URL which is primary key in database  
@@ -27,10 +27,10 @@ public interface IUserDatabase
 	 * @param userName is unique key to identify record in database 
 	 * @param mobileno is field which you wants to update in database 
 	 */
-	public void update(String userName , String mobileno);
+	public String update(String userName , String mobileno);
 	
 	/**This method delete the record from database 
 	 * @param userName is unique userName to identify record in database
 	 */
-	public void delete(String userName);
+	public String delete(String userName);
 }

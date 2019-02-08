@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=/home/admin1/Desktop/FundooNote/.git\:
-GitRepositoriesView.GitDirectories.relative=.git\:
+GitRepositoriesView.GitDirectories=/home/admin1/Desktop/FundooNote/.git\:/home/admin1/Desktop/spring-rest/.git\:
+GitRepositoriesView.GitDirectories.relative=.git\:/home/admin1/Desktop/spring-rest/.git\:
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

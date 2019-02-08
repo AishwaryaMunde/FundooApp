@@ -42,7 +42,7 @@ public class UserDatabaseImpl implements IUserDatabase
 		return userName;
 	}
 
-	public void save(Fundoouserdata userData) 
+	public Fundoouserdata save(Fundoouserdata userData) 
 	{		
 		if(utility.emailSend(userData.getEmailId()))
 		{
@@ -52,9 +52,10 @@ public class UserDatabaseImpl implements IUserDatabase
 	    	session.close();
 	    	factory.close();	
 		}		
+		return userData;
 	}
 	
-	public void update(String userName , String mobileno) 
+	public String update(String userName , String mobileno) 
 	{
 		Query query = session.createQuery("update Fundoouserdata set MobileNo=:mobileno where UserName= :userName");
 		query.setParameter("mobileno", mobileno);
@@ -64,6 +65,7 @@ public class UserDatabaseImpl implements IUserDatabase
 		transaction.commit();
 	    session.close();
 	    factory.close();
+	    return userName;
 	}
 
 	public String fetchById(String userName) 
@@ -81,13 +83,14 @@ public class UserDatabaseImpl implements IUserDatabase
 	    return userName;
 	}
 
-	public void delete(String userName) 
+	public String delete(String userName) 
 	{
 		Query query = session.createQuery("delete Fundoouserdata where UserName= :userName");
 		query.setParameter("userName", userName);
 		query.executeUpdate();
 		transaction.commit();
 	    session.close();
-	    factory.close();				
+	    factory.close();
+		return userName;				
 	}
 }
