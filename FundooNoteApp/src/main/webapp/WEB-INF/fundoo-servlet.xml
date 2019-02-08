@@ -19,11 +19,11 @@
 	<context:component-scan base-package="com.bridgelabz.fundooapp" />
 
 	<!--To specify the view components -->
-	<bean
+	<!-- <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
-	</bean>
+	</bean> -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="resources/messages" />
@@ -33,9 +33,9 @@
 	<bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ToDo_App" />
-		<property name="user" value="root" />
-		<property name="password" value="root" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/fundoo" />
+		<property name="user" value="admin" />
+		<property name="password" value="admin" />
 		<property name="maxPoolSize" value="100" />
 		<property name="minPoolSize" value="3" />
 		<property name="maxStatements" value="4" />
@@ -51,7 +51,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>
-					com.bridgeit.springrest.model.User
+					com.bridgelabz.fundooapp.model.Fundoouserdata
 				</value>
 				
 			</list>
