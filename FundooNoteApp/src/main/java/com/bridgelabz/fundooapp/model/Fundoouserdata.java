@@ -8,40 +8,24 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "Fundoouserdata")
-public class Fundoouserdata 
-{
+@Table(name="Userdata")
+public class Fundoouserdata {
 	@Id
+	@Column(name="Id")
 	@GenericGenerator(name = "user", strategy = "increment")
 	@GeneratedValue(generator = "user")
-	@Column(name = "Id")
 	private int id;
-	@Column(name = "FirstName")
-	String firstName;
-	@Column(name = "LastName")
-	String lastName;
-	@Column(name = "MobileNo")
-	String mobileNo;
-	@Column(name = "Emailid")
-	String emailId;
-	@Column(name = "UserName")
-	String userName;
-	@Column(name = "Password")
-	String password;
-	
-	public Fundoouserdata()
-	{}
-	
-	public Fundoouserdata(int id, String firstName, String lastName, String mobileNo, String emailId, String userName,
-			String password) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.mobileNo = mobileNo;
-		this.emailId = emailId;
-		this.userName = userName;
-		this.password = password;
+	@Column(name="Name")
+	private String name;
+	@Column(name="Mobileno")
+	private String mobileNo;
+	@Column(name="EmailId")
+	private String emailId;
+	@Column(name="Password")
+	private String password;
+
+	public Fundoouserdata() {
+		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;
@@ -49,17 +33,11 @@ public class Fundoouserdata
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getMobileNo() {
 		return mobileNo;
@@ -73,12 +51,6 @@ public class Fundoouserdata
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -87,7 +59,7 @@ public class Fundoouserdata
 	}
 	@Override
 	public String toString() {
-		return "Fundoouserdata [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", mobileNo="
-				+ mobileNo + ", emailId=" + emailId + ", userName=" + userName + ", password=" + password + "]";
-	}	
+		return "User [id=" + id + ", name=" + name + ", mobileNo=" + mobileNo + ", emailId=" + emailId + ", password="
+				+ password + "]";
+	}
 }
