@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.fundooapp.model.Fundoouserdata;
+import com.bridgelabz.fundooapp.service.UserServiceImpl;
 
 @RestController
 public class UserController 
 {
+	UserServiceImpl service = new UserServiceImpl();
 	@RequestMapping(value = "/create", method = RequestMethod.POST,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Fundoouserdata> addUser(@RequestBody Fundoouserdata user,  BindingResult bindingResult) {
