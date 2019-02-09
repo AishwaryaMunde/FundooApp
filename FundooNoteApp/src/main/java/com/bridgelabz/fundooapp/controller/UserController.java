@@ -20,9 +20,9 @@ public class UserController
 	UserServiceImpl service = new UserServiceImpl();
 	@RequestMapping(value = "/create", method = RequestMethod.POST,
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Fundoouserdata> addUser(@RequestBody Fundoouserdata user,  BindingResult bindingResult) {
-		
+	public ResponseEntity<Fundoouserdata> addUser(@RequestBody Fundoouserdata user,  BindingResult bindingResult) {		
 		System.out.println(user.toString());
+		service.addUser(user);
 		return new ResponseEntity<Fundoouserdata>(user,HttpStatus.OK);
 	}
 	
@@ -31,6 +31,7 @@ public class UserController
 	public ResponseEntity<?> readUser(@RequestParam String emailId , @RequestParam String password)
 	{
 		System.out.println(emailId+" "+password);
+		service.readUser(emailId, password);
 		return new ResponseEntity<String>(emailId,HttpStatus.OK);
 	}
 	
@@ -39,6 +40,7 @@ public class UserController
 	public ResponseEntity<?> updateUser(@PathVariable String id)
 	{
 		System.out.println(id);
+		service.updateUser(id);
 		return new ResponseEntity<String>(id,HttpStatus.OK);
 	}
 	
@@ -47,6 +49,7 @@ public class UserController
 	public ResponseEntity<?> deleteUser(@PathVariable String id)
 	{
 		System.out.println(id);
+		service.deleteUser(id);
 		return new ResponseEntity<String>(id,HttpStatus.OK);
 	}
 }
