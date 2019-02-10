@@ -24,6 +24,7 @@
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean> -->
+	<bean id="userServiceImpl" class="com.bridgelabz.fundooapp.service.UserServiceImpl"></bean>
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="resources/messages" />

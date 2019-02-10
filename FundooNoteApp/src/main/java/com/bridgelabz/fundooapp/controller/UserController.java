@@ -1,5 +1,6 @@
 package com.bridgelabz.fundooapp.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,8 @@ import com.bridgelabz.fundooapp.service.UserServiceImpl;
 @RestController
 public class UserController 
 {
-	UserServiceImpl service = new UserServiceImpl();
+	@Autowired
+	UserServiceImpl service;//= new UserServiceImpl();
 	@RequestMapping(value = "/create", method = RequestMethod.POST,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Fundoouserdata> addUser(@RequestBody Fundoouserdata user,  BindingResult bindingResult) {		
