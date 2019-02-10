@@ -25,6 +25,7 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean> -->
 	<bean id="userServiceImpl" class="com.bridgelabz.fundooapp.service.UserServiceImpl"></bean>
+	<bean id="userDaoImpl" class="com.bridgelabz.fundooapp.dao.UserDaoImpl"></bean>
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="resources/messages" />
