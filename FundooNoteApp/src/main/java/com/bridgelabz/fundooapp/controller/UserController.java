@@ -19,7 +19,7 @@ import com.bridgelabz.fundooapp.service.UserServiceImpl;
 public class UserController 
 {
 	@Autowired
-	UserServiceImpl service;//= new UserServiceImpl();
+	UserServiceImpl service;
 	@RequestMapping(value = "/create", method = RequestMethod.POST,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Fundoouserdata> addUser(@RequestBody Fundoouserdata user,  BindingResult bindingResult) {		
