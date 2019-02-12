@@ -2,6 +2,7 @@ package com.bridgelabz.fundooapp.dao;
 
 import java.util.List;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -10,22 +11,25 @@ import com.bridgelabz.fundooapp.model.Fundoouserdata;
 @Repository
 public class UserDaoImpl implements IUserdao {
 	
-//	@Autowired
-//	private SessionFactory sessionFactory;
+	@Autowired
+	private SessionFactory sessionFactory;
 //	@Autowired
 //	Transaction tx;
 //	Session session = sessionFactory.openSession();
 
 	public Fundoouserdata create(Fundoouserdata user) {
-//		System.out.println(user);
-//		System.out.println(sessionFactory);
+		System.out.println("in dao "+user);
+		System.out.println(sessionFactory);
 //		sessionFactory.getCurrentSession().save(user);
 //		System.out.println("save successfully");
+//		sessionFactory.close;
+//		tx.commit;		
 		return user;
 	}
 
 	public boolean read(String emailId, String password) {
 		boolean userFound=false;		
+		System.out.println("in dao "+emailId);
 //		Query query = session.createQuery("from Userdata where UserName=:uname and Password=:password");
 //    	query.setParameter("uname",userName);
 //    	query.setParameter("password",Password);
@@ -42,6 +46,7 @@ public class UserDaoImpl implements IUserdao {
 	}
 
 	public int update(int id) {
+		System.out.println("in dao "+id);
 //		Query query = session.createQuery("update Userdata set Password=:password where Id=:id");
 //		query.setParameter("id" : id);		
 //		query.setParameter("emailid",email);
@@ -55,6 +60,7 @@ public class UserDaoImpl implements IUserdao {
 	}
 
 	public int delete(int id) {
+		System.out.println("in dao "+id);
 //		Query query = session.createQuery("delete from Userdata where Id=:id");
 //		query.setParameter("id",id);
 //		int result = query.executeUpdate();

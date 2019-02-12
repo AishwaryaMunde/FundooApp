@@ -10,6 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name="Userdata")
 public class Fundoouserdata {
+	
 	@Id
 	@Column(name="Id")
 	@GenericGenerator(name = "user", strategy = "increment")
