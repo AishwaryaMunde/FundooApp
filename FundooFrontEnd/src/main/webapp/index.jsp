@@ -1,15 +1,13 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	
-  <title>Bootstrap 4 Website Example</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> 
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> 
   <style>
   body {
@@ -65,6 +63,9 @@
   	font-size: 18px;
   	color: white;
   }
+  .modal-content {
+  	border-radius: 15px;
+  }
   </style>
 
 </head>
@@ -78,8 +79,8 @@
 				</div>
 				<form class="col-12">
 					<div class="form-group">
-						<b><p class="text-left">EmailId</p></b>
-						<input type="text" class="form-control" placeholder="Enter Username">
+						<b><p class="text-left">Email Id</p></b>
+						<input type="text" class="form-control" placeholder="Enter EmailId">
 					</div>
 					<div class="form-group">
 						<b><p class="text-left">Password</p></b>
@@ -88,7 +89,7 @@
 					<button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
 				</form>
 				<div class="col-12">
-					<a href="#">Forget Password</a>
+					<a href="ForgetPassword.jsp">Forget Password</a>
 				</div>
 			</div>
 		</div>
