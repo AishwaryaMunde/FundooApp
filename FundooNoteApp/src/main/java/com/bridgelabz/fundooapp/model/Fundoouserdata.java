@@ -16,16 +16,54 @@ public class Fundoouserdata {
 	@GenericGenerator(name = "user", strategy = "increment")
 	@GeneratedValue(generator = "user")
 	private int id;
-	@Column(name="Name")
-	private String name;
-	@Column(name="Mobileno")
-	private String mobileNo;
-	@Column(name="EmailId")
+	@Column(name="First_Name")
+	private String firstName;
+	@Column(name="Middle_Name")
+	private String middleName;
+	@Column(name="Last_Name")
+	private String lastName;
+	@Column(name="Date_Of_Birth")
+	private String dateOfBirth;
+	@Column(name="Gender")
+	private String gender;
+	@Column(name="Country")
+	private String country;
+	@Column(name="Phone")
+	private String phone;
+	@Column(name="Phone_Ext")
+	private String phoneExt;
+	@Column(name="Email_Id")
 	private String emailId;
+	@Column(name="Address")
+	private String address;
+	@Column(name="Username")
+	private String userName;
 	@Column(name="Password")
 	private String password;
-
+	@Column(name="Status")
+	private String status;
+	
 	public Fundoouserdata() {
+	}
+	
+	public Fundoouserdata(int id, String firstName, String middleName, String lastName, String dateOfBirth,
+			String gender, String country, String phone, String phoneExt, String emailId, String address,
+			String userName, String password, String status) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		this.gender = gender;
+		this.country = country;
+		this.phone = phone;
+		this.phoneExt = phoneExt;
+		this.emailId = emailId;
+		this.address = address;
+		this.userName = userName;
+		this.password = password;
+		this.status = status;
 	}
 	public int getId() {
 		return id;
@@ -33,17 +71,53 @@ public class Fundoouserdata {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getMobileNo() {
-		return mobileNo;
+	public String getMiddleName() {
+		return middleName;
 	}
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getPhoneExt() {
+		return phoneExt;
+	}
+	public void setPhoneExt(String phoneExt) {
+		this.phoneExt = phoneExt;
 	}
 	public String getEmailId() {
 		return emailId;
@@ -51,15 +125,35 @@ public class Fundoouserdata {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", mobileNo=" + mobileNo + ", emailId=" + emailId + ", password="
-				+ password + "]";
+		return "Fundoouserdata [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
+				+ lastName + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", country=" + country + ", phone="
+				+ phone + ", phoneExt=" + phoneExt + ", emailId=" + emailId + ", address=" + address + ", userName="
+				+ userName + ", password=" + password + ", status=" + status + "]";
 	}
 }

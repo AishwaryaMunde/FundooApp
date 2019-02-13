@@ -6,7 +6,7 @@ import com.bridgelabz.fundooapp.dao.IUserdao;
 import com.bridgelabz.fundooapp.model.Fundoouserdata;
 
 @Service
-public class UserServiceImpl implements IUserService{
+public class UserServiceImpl implements IUserService {
 	
 	@Autowired
 	IUserdao dao;
