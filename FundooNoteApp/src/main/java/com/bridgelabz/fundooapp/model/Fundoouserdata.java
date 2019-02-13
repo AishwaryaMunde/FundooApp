@@ -26,7 +26,6 @@ public class Fundoouserdata {
 	private String password;
 
 	public Fundoouserdata() {
-		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;
