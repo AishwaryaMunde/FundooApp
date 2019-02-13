@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.fundooapp.model.Fundoouserdata;
+import com.bridgelabz.fundooapp.service.IUserService;
 import com.bridgelabz.fundooapp.service.UserServiceImpl;
 
 @RestController
 public class UserController 
 {
 	@Autowired
-	UserServiceImpl service;
+	IUserService service;
 	/**This method process the data coming from server to service 
 	 * @param user is reference variable of model class ie Fundoouserdata 
 	 * @param bindingResult is an interface 

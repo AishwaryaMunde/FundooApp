@@ -2,14 +2,15 @@ package com.bridgelabz.fundooapp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.bridgelabz.fundooapp.dao.UserDaoImpl;
+import com.bridgelabz.fundooapp.dao.IUserdao;
 import com.bridgelabz.fundooapp.model.Fundoouserdata;
 
 @Service
 public class UserServiceImpl implements IUserService{
 	
 	@Autowired
-	UserDaoImpl dao;
+	IUserdao dao;
+	
 	public Fundoouserdata addUser(Fundoouserdata user) {
 		System.out.println("in service add  \n" +user);
 		dao.create(user);
