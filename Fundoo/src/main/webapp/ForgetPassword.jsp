@@ -84,7 +84,7 @@
 					 at your registered email id</p>
 					<div class="form-group">
 						<b><p class="text-left">Enter Email Id</p></b>
-						<input type="text" class="form-control" placeholder="Enter Email Id">
+						<input type="text" class="form-control" placeholder="abc123@gmail.com" required>
 					</div>
 					<button type="submit" class="btn">Recover Password</button>
 				</form>

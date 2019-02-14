@@ -22,6 +22,6 @@ public class UserServiceImpl implements IUserService{
 	public String read(String emailId, String password) {
 		System.out.println("in service : "+emailId+" "+password);
 		dao.readUser(emailId,password);
-		return null;
+		return emailId;
 	}
 }

@@ -35,4 +35,11 @@ public class UserController {
 		service.read(emailId,password);
 		return new ResponseEntity<String>(emailId,HttpStatus.OK);
 	}
+	
+	@RequestMapping(value="/forgetPassword",produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getPassword(@RequestParam String emailId)
+	{
+		System.out.println("email id : "+emailId);
+		return new ResponseEntity<String>(emailId,HttpStatus.OK);
+	}
 }

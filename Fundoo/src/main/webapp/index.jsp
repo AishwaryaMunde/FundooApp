@@ -79,12 +79,12 @@
 				</div>
 				<form class="col-12">
 					<div class="form-group">
-						<b><p class="text-left">Email Id</p></b>
-						<input type="text" class="form-control" placeholder="Enter EmailId">
+						<b><p class="text-left">Username</p></b>
+						<input type="text" class="form-control" placeholder="Abc" required>
 					</div>
 					<div class="form-group">
 						<b><p class="text-left">Password</p></b>
-						<input type="password" class="form-control" placeholder="Enter Password">
+						<input type="password" class="form-control" placeholder="Abc@1234" required>
 					</div>
 					<button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
 				</form>
