@@ -16,6 +16,7 @@ public class UserController {
 	
 	@Autowired
 	IUserService service;
+	
 	@RequestMapping(value="/create",method=RequestMethod.POST,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> create(@RequestBody Userdata user)

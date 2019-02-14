@@ -1,2 +1,6 @@
 /home/admin1/Desktop/FundooApp/Fundoo/src/main/java/com/bridgelabz/fundooapp/model/Userdata.java
+/home/admin1/Desktop/FundooApp/Fundoo/src/main/java/com/bridgelabz/fundooapp/service/IUserService.java
+/home/admin1/Desktop/FundooApp/Fundoo/src/main/java/com/bridgelabz/fundooapp/service/UserServiceImpl.java
 /home/admin1/Desktop/FundooApp/Fundoo/src/main/java/com/bridgelabz/fundooapp/controller/UserController.java
+/home/admin1/Desktop/FundooApp/Fundoo/src/main/java/com/bridgelabz/fundooapp/dao/IUserdao.java
+/home/admin1/Desktop/FundooApp/Fundoo/src/main/java/com/bridgelabz/fundooapp/dao/UserDaoImpl.java
