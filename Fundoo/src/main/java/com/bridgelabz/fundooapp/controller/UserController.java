@@ -40,6 +40,7 @@ public class UserController {
 	public ResponseEntity<?> getPassword(@RequestParam String emailId)
 	{
 		System.out.println("email id : "+emailId);
+		service.forgetPassword(emailId);
 		return new ResponseEntity<String>(emailId,HttpStatus.OK);
 	}
 }

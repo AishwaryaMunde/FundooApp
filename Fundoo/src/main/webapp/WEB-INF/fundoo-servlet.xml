@@ -19,4 +19,5 @@
 	
 	<bean id="userServiceImpl" class="com.bridgelabz.fundooapp.service.UserServiceImpl"></bean>
 	<bean id="userDaoImpl" class="com.bridgelabz.fundooapp.dao.UserDaoImpl"></bean>
+	<bean id="utility" class="com.bridgelabz.fundooapp.utility.Utility"></bean>
 </beans>

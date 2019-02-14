@@ -40,7 +40,7 @@ public class Utility {
         } 	
 	}
 	
-	public static void emailSend(String toEmail)
+	public static void emailSend(String email,String passwd)
 	{
 		final String fromEmail = "aishwarya.munde14@gmail.com"; //requires valid gmail id
 		final String password = "Aishu1410"; // correct password for gmail id
@@ -62,9 +62,9 @@ public class Utility {
 	      msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
 	      msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
 	      msg.setSubject("Aishwarya", "UTF-8");
-	      msg.setText("http://localhost:8081/LoginMvc/index.jsp", "UTF-8");
+	      msg.setText("Your password is :"+passwd+" ", "UTF-8");
 	      msg.setSentDate(new Date());
-	      msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
+	      msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email, false));
 	      System.out.println("Message is ready");
 	      Transport.send(msg);  
 	      System.out.println("Email Sent Successfully!!");
@@ -72,6 +72,5 @@ public class Utility {
 		  catch (Exception e) {
 		      e.printStackTrace();
 		  }	
-	}
-	
+	}	
 }

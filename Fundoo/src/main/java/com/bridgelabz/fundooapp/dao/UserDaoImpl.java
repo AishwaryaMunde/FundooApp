@@ -48,4 +48,16 @@ public class UserDaoImpl implements IUserdao {
     	factory.close();
 		return emailId;
 	}
+
+	public String getPassword(String emailId) {
+		System.out.println("in dao : "+emailId);
+		Query query = session.createQuery("select password from Userdata where Email_Id=:emailId");
+		query.setParameter("emailId",emailId);
+		String user = (String)query.uniqueResult();
+		System.out.println(user);
+    	transaction.commit();
+    	session.close();
+    	factory.close();
+		return user;				
+	}
 }
