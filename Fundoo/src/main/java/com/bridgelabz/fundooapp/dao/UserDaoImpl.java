@@ -1,7 +1,8 @@
 package com.bridgelabz.fundooapp.dao;
 
 import java.io.File;
-
+import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,7 +10,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.springframework.stereotype.Repository;
-
 import com.bridgelabz.fundooapp.model.Userdata;
 
 @Repository
@@ -26,9 +26,26 @@ public class UserDaoImpl implements IUserdao {
 		System.out.println("in dao "+user);
 		System.out.println(factory);
 		session.save(user);
-		session.close();
-		factory.close();		
-		transaction.commit();
-		return user;
+    	System.out.println("Registered Suceessfully");
+    	transaction.commit();
+    	session.close();
+    	factory.close();
+    	return user;
+	}
+
+	public String readUser(String emailId, String password) {
+		Query query = session.createQuery("from Userdata where Email_Id=:emailId and Password=:password");
+    	query.setParameter("emailId",emailId);
+    	query.setParameter("password",password);
+    	List list = query.list();
+    	if(list != null && list.size()>0)
+    	{
+    		System.out.println(list);
+    		//userFound = true;
+    	}
+    	transaction.commit();
+    	session.close();
+    	factory.close();
+		return emailId;
 	}
 }

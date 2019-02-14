@@ -18,4 +18,10 @@ public class UserServiceImpl implements IUserService{
 		dao.createUser(user);
 		return user;
 	}
+
+	public String read(String emailId, String password) {
+		System.out.println("in service : "+emailId+" "+password);
+		dao.readUser(emailId,password);
+		return null;
+	}
 }

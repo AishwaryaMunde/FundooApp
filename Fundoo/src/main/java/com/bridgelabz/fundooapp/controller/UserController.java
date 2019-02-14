@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.bridgelabz.fundooapp.model.Userdata;
 import com.bridgelabz.fundooapp.service.IUserService;
@@ -24,5 +25,14 @@ public class UserController {
 		System.out.println("in controller "+user.toString());
 		service.create(user);
 		return new ResponseEntity<Userdata>(user,HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/read",method=RequestMethod.POST,
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> read(@RequestParam String emailId,@RequestParam String password)
+	{
+		System.out.println("Read : "+emailId+" "+password);
+		service.read(emailId,password);
+		return new ResponseEntity<String>(emailId,HttpStatus.OK);
 	}
 }
