@@ -9,6 +9,58 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> 
+  <!-- <script src="/js/PostRequest.js"> -->
+  <script>
+/*   $(document).ready(function() {
+		
+		// SUBMIT FORM
+	    $("#login").submit(function(event) {
+			// Prevent the form from submitting via the browser.
+			event.preventDefault();
+			ajaxPost();
+		});    
+	    
+	    function ajaxPost(){
+	    	
+	    	// PREPARE FORM DATA
+	    	var formData = {
+	    		userName : $("#userName").val(),
+	    		password :  $("#userPassword").val()
+	    	}
+	    	alert(userName)
+	    	// DO POST
+	    	$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "http://localhost:8080/FundooNoteApp/read",
+				data : JSON.stringify(formData),
+				dataType : 'json',
+				success : function(result) {
+					if(result.status == "Done"){
+						$("#postResultDiv").html("<p style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>" + 
+													"Post Successfully! <br>" +
+													"---> User Name = " + 
+													result.data.userName + " ,Password = " + result.data.password + "</p>");
+					}else{
+						$("#postResultDiv").html("<strong>Error</strong>");
+					}
+					console.log(result);
+				},
+				error : function(e) {
+					alert("Error!")
+					console.log("ERROR: ", e);
+				}okloi
+			});    	
+	    	// Reset FormData after Posting
+	    	resetData(); 
+	    }
+	    
+	    function resetData(){
+	    	$("#userName").val("");
+	    	$("#userPassword").val("");
+	    }
+	}) */	
+  </script>
   <style>
   body {
   	font-family: 'Robota',sans-sarif; 
@@ -79,14 +131,14 @@
 				</div>
 				<form class="col-12">
 					<div class="form-group">
-						<b><p class="text-left">Email Id</p></b>
-						<input type="text" class="form-control" placeholder="Enter EmailId">
+						<b><p class="text-left">Username</p></b>
+						<input type="text" class="form-control" id="userName" placeholder="Enter EmailId">
 					</div>
 					<div class="form-group">
 						<b><p class="text-left">Password</p></b>
-						<input type="password" class="form-control" placeholder="Enter Password">
+						<input type="password" class="form-control" id="passwd" placeholder="Enter Password">
 					</div>
-					<button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
+					<button id="login"  type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
 				</form>
 				<div class="col-12">
 					<a href="ForgetPassword.jsp">Forget Password</a>

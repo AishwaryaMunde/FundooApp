@@ -30,7 +30,7 @@ public class UserController
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Fundoouserdata> addUser(@RequestBody Fundoouserdata user,  BindingResult bindingResult) {		
 		System.out.println(user.toString());
-		service.addUser(user);
+//		service.addUser(user);
 		return new ResponseEntity<Fundoouserdata>(user,HttpStatus.OK);
 	}
 	
@@ -44,7 +44,7 @@ public class UserController
 	public ResponseEntity<?> readUser(@RequestParam String emailId , @RequestParam String password)
 	{
 		System.out.println(emailId+" "+password);
-		service.readUser(emailId, password);
+		//service.readUser(emailId, password);
 		return new ResponseEntity<String>(emailId,HttpStatus.OK);
 	}
 	

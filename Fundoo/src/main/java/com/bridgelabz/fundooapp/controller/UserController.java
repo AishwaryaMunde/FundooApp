@@ -29,11 +29,11 @@ public class UserController {
 	
 	@RequestMapping(value="/read",method=RequestMethod.POST,
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> read(@RequestParam String emailId,@RequestParam String password)
+	public ResponseEntity<?> read(@RequestParam String userName,@RequestParam String password)
 	{
-		System.out.println("Read : "+emailId+" "+password);
-		service.read(emailId,password);
-		return new ResponseEntity<String>(emailId,HttpStatus.OK);
+		System.out.println("Read : "+userName+" "+password);
+		service.read(userName,password);
+		return new ResponseEntity<String>(userName,HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/forgetPassword",produces=MediaType.APPLICATION_JSON_VALUE)

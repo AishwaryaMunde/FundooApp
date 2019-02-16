@@ -33,9 +33,9 @@ public class UserDaoImpl implements IUserdao {
     	return user;
 	}
 
-	public String readUser(String emailId, String password) {
-		Query query = session.createQuery("from Userdata where Email_Id=:emailId and Password=:password");
-    	query.setParameter("emailId",emailId);
+	public String readUser(String userName, String password) {
+		Query query = session.createQuery("from Userdata where Username=:userName and Password=:password");
+    	query.setParameter("userName",userName);
     	query.setParameter("password",password);
     	List list = query.list();
     	if(list != null && list.size()>0)
@@ -46,7 +46,7 @@ public class UserDaoImpl implements IUserdao {
     	transaction.commit();
     	session.close();
     	factory.close();
-		return emailId;
+		return userName;
 	}
 
 	public String getPassword(String emailId) {

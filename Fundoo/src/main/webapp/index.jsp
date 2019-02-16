@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script type="text/javascript" src="/js/PostRequest.js"></script>
+ 
   <style>
   body {
   	font-family: 'Robota',sans-sarif; 
@@ -21,7 +24,7 @@
   .modal-content {
   	background-color: #3b4652;
   	opacity: .95;
-  	padding: 0 16px;
+  	padding: 0 10px;
   	box-shadow: 0px 0px 3px #848484;
   }
   .user-img {
@@ -35,13 +38,13 @@
   	box-shadow: 0px 0px 2px #848484;
   }
   .form-group {
-  	margin-bottom: 20px;
+  	margin-bottom: 23px;
   }
   .form-group input {
   	height: 32px;
   	border-radius: 5px;
   	border: 0;
-  	font-size: 15px;
+  	font-size: 13px;
   }
   button {
 	width: 40%;
@@ -80,13 +83,13 @@
 				<form class="col-12">
 					<div class="form-group">
 						<b><p class="text-left">Username</p></b>
-						<input type="text" class="form-control" placeholder="Abc" required>
+						<input id="userName" type="text" class="form-control" placeholder="Abc" required>
 					</div>
 					<div class="form-group">
 						<b><p class="text-left">Password</p></b>
-						<input type="password" class="form-control" placeholder="Abc@1234" required>
+						<input id="userPassword" type="password" class="form-control" placeholder="Abc@1234" required>
 					</div>
-					<button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
+					<button id="login" type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
 				</form>
 				<div class="col-12">
 					<a href="ForgetPassword.jsp">Forget Password</a>

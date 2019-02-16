@@ -21,10 +21,10 @@ public class UserServiceImpl implements IUserService{
 		return user;
 	}
 
-	public String read(String emailId, String password) {
-		System.out.println("in service : "+emailId+" "+password);
-		dao.readUser(emailId,password);
-		return emailId;
+	public String read(String userName, String password) {
+		System.out.println("in service : "+userName+" "+password);
+		dao.readUser(userName,password);
+		return userName;
 	}
 
 	public String forgetPassword(String emailId) {
