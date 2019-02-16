@@ -159,11 +159,15 @@ body {
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
- <!--  <a href="#">Clients</a>
-  <a href="#">Contact</a> -->
-</div>
+  <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>Dashboard</h2>
+        </div>
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		  <a href="#">User</a>
+		  <a href="#">Profile</a>
+		  <a href="#">Logout</a>
+       </div>
 
 <script>
 function openNav() {
