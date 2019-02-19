@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="style.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	 
@@ -37,9 +36,7 @@
         success : function(result) {
             if(result.status == "done"){
                 console.log('hello');
-                $.get('Dashboard.jsp');
-                /* var redirectUrl=; */
-                /* window.location.href= "Dashboard.jsp"; */
+                window.location= "Dashboard.jsp";
                 }
         	    else{
                 	console.log('error')

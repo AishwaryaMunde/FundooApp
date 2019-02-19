@@ -7,6 +7,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <title>Bootstrap 4 Website Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -180,6 +187,100 @@ body {
   </div>
 </nav>
 
+<div class="container">
+ <div class="row">
+  <div class="col-md-3">
+  	FirstName
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  </div>
+  <div class="col-3">
+  	Middle Name
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  </div>
+  <div class="col-3">
+  	Last Name
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  </div>  
+  <div class="col-3">
+	  <div class="form-group">
+		<label for="exampleInputFile">Select Profile Picture</label>
+		<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+		<small id="fileHelp" class="form-text text-muted"></small>
+	</div>
+</div>
+</div> 
+<div class="row">
+  <div class="col-md-3">
+  	Date Of Birth
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  </div>
+    <div class="col-3">
+  	<div class="form-group">
+    Gender
+    <select class="form-control" id="exampleSelect1">
+      <option>---Select---</option>
+      <option>Female</option>
+      <option>Male</option>
+    </select>
+  </div>
+  </div>
+  <div class="col-3">
+  	<div class="form-group">
+    Country
+    <select class="form-control" id="exampleSelect1">
+      <option>---Select---</option>
+      <option>India</option>
+      <option>America</option>
+      <option>London</option>
+      <option>Paris</option>
+      <option>New-York</option>
+    </select>
+  </div>
+  </div>
+</div> 
+<div class="row">
+  <div class="col-md-3">
+  	Phone
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  	<div class="row">
+  		(999)999-9999
+  	</div>	
+  </div>
+  <div class="col-3">
+  	Phone + Ext
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  	<div class="row">
+  		(999)999-9999-9
+  	</div>	
+  </div>
+</div> 
+<div class="row">
+  <div class="col-md-3">
+  	Email Id
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  </div>
+  <div class="col-3">
+  	Address
+  	<div class="row">
+  		<input type="text">
+  	</div>	
+  </div>
+</div> 
+</div>
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <nav id="sidebar">
@@ -192,7 +293,7 @@ body {
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user">User</i></a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="Register.jsp">New User</a>
+                        <a href="#">New User</a>
                     </li>
                     <li>
                         <a href="#">User List</a>
@@ -203,7 +304,8 @@ body {
 		  <a href="index.jsp">Logout</a>
 		  </nav>
        </div>
-      
+
+
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "200px";
