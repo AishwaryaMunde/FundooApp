@@ -10,8 +10,52 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script type="text/javascript" src="/js/PostRequest.js"></script>
- 
+ <script>
+ $(document).ready(function () {
+     $("#loginverify").submit(function (event) {
+         event.preventDefault();
+         ajaxPost();    
+     });
+     function ajaxPost() {
+
+         // PREPARE FORM DATA
+         var formData = {
+        	userName: $("#userName").val(),
+        	userPassword: $("#userPassword").val()
+         }
+         console.log(formData.userName, formData.userPassword);                
+         $.ajax({    
+             type : "POST",
+             contentType : "application/json",
+             url :  "http://localhost:8080/Fundoo/read",
+             data : JSON.stringify(formData),
+             dataType : 'json',
+             beforeSend: function(xhr) {
+             xhr.setRequestHeader("Accept", "application/json");
+             xhr.setRequestHeader("Content-Type", "application/json");
+ 	   },
+        success : function(result) {
+            if(result.status == "done"){
+                console.log('hello');
+                window.location = 'Dashboard.jsp';
+                }
+        	    else{
+                	console.log('error')
+         			alert('invalid username and password')
+             	}
+         console.log(result);
+     }
+ });
+ resetData();
+}
+function resetData(){
+$("#userName").val("");
+$("#userPassword").val("");
+}
+ }
+ )    
+</script>
+
   <style>
   body {
   	font-family: 'Robota',sans-sarif; 
@@ -80,7 +124,7 @@
 				<div class="col-12 user-img">
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8aCnkLH2IZazN-VzDOxaUULroyr4k2PP2a2Dus-icLcL49gBC">				
 				</div>
-				<form class="col-12">
+				<form class="col-12" id="loginverify">
 					<div class="form-group">
 						<b><p class="text-left">Username</p></b>
 						<input id="userName" type="text" class="form-control" placeholder="Abc" required>

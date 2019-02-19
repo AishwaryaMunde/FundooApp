@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -75,7 +77,27 @@
 body {
   font-family: "Lato", sans-serif;
 }
+.icon-bar {
+  width: 90px;
+  background-color: #555;
+}
 
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #000;
+}
 .sidebar {
   height: 100%;
   width: 0;
@@ -83,6 +105,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
+  bottom:500px;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -92,7 +115,7 @@ body {
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 17px;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -106,16 +129,16 @@ body {
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 20px;
   margin-left: 50px;
 }
 
 .openbtn {
-  font-size: 20px;
+  font-size: 17px;
   cursor: pointer;
   background-color: #111;
   color: white;
-  padding: 10px 15px;
+  padding: 8px 10px;
   border: none;
 }
 
@@ -142,16 +165,16 @@ body {
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
   	<button class="openbtn" onclick="openNav()">☰</button>
-    <a class="navbar-brand" href="#">User Management</a>
+    <a class="navbar-brand" href="#">User Management<i class='fas fa-chevron-circle-right'></i></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     </ul>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          User
+          admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="index.jsp">Logout</a>
-          <!-- <a class="dropdown-item" href="#">Another action</a> -->
+          <a class="dropdown-item" href="#">Profile</a> 
+          <a class="dropdown-item" href="index.jsp">Logout</a>         
         </div>
       </li>
   </div>
@@ -160,19 +183,31 @@ body {
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <nav id="sidebar">
-        <div class="sidebar-header">
+        <!-- <div class="sidebar-header">
             <h2>Dashboard</h2>
-        </div>
+        </div> -->
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		  <a href="#">User</a>
+		   <a href="#">Dashboard</a>
+		  <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user">User</i></a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">New User</a>
+                    </li>
+                    <li>
+                        <a href="#">User List</a>
+                    </li>
+                </ul>
+            </li>
 		  <a href="#">Profile</a>
-		  <a href="#">Logout</a>
+		  <a href="index.jsp">Logout</a>
+		  </nav>
        </div>
-
+      
 <script>
 function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
 }
 
 function closeNav() {

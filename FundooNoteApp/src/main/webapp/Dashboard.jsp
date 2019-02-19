@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <!-- <link rel="stylesheet" href="/css/style.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -20,11 +24,32 @@
   }
   </script>
   	
-  <style>
+<style>
   body {
     position: relative;
     height: 100%
   }
+  .icon-bar {
+  width: 90px;
+  background-color: #555;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 50px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
   ul.nav-pills {
     top: 10px;
     position: fixed;
@@ -109,7 +134,10 @@ body {
   font-size: 36px;
   margin-left: 50px;
 }
-
+.nav.pmd-sidebar-nav {
+    clear: both;
+    flex-wrap: nowrap;
+}
 .openbtn {
   font-size: 20px;
   cursor: pointer;
@@ -122,7 +150,10 @@ body {
 .openbtn:hover {
   background-color: #444;
 }
-
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
 #main {
   transition: margin-left .5s;
   padding: 16px;
@@ -141,34 +172,36 @@ body {
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-  	<button class="openbtn" onclick="openNav()">☰</button>
-    <a class="navbar-brand" href="#">User Management</a>
+  	<button class="openbtn" onclick="openNav()"><i class='fas fa-chevron-circle-right'></i></button>
+    <a class="navbar-brand" href="#">User Management<i class='fas fa-chevron-circle-right'></i></a>
+    
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     </ul>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          User
+          admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="index.jsp">Logout</a>
+         <!--  <a class="dropdown-item"><i class="fal fa-chevron-circle-right"></i></a> -->
           <!-- <a class="dropdown-item" href="#">Another action</a> -->
         </div>
       </li>
   </div>
 </nav>
 
-<div id="mySidebar" class="sidebar">
+<div id="mySidebar" class="sidebar icon-bar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <nav id="sidebar">
         <div class="sidebar-header">
             <h2>Dashboard</h2>
         </div>
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		  <a href="#">User</a>
-		  <a href="#">Profile</a>
-		  <a href="#">Logout</a>
-       </div>
-
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>		 
+		  <a href="#"><i class="fa fa-user">User<i class="fas fa-angle-down"></i></i></a>
+		  <a href="#"><i class="fa fa-user">Profile</i></a>
+		  <a href="index.jsp"><i class="fa fa-user">Logout</i></a>
+		  </nav>
+    </div>   
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";

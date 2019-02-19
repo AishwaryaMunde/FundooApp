@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.bridgelabz.fundooapp.model.UserLogin;
 import com.bridgelabz.fundooapp.model.Userdata;
 import com.bridgelabz.fundooapp.service.IUserService;
 
@@ -27,13 +30,13 @@ public class UserController {
 		return new ResponseEntity<Userdata>(user,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/read",method=RequestMethod.POST,
-			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> read(@RequestParam String userName,@RequestParam String password)
+	@PostMapping("/read")
+	public ResponseEntity<?> read(@RequestBody UserLogin user)
 	{
-		System.out.println("Read : "+userName+" "+password);
-		service.read(userName,password);
-		return new ResponseEntity<String>(userName,HttpStatus.OK);
+		System.out.println(user.getUserName()+" "+user.getUserPassword());
+		System.out.println("in read");
+		service.read(user);
+		return new ResponseEntity<UserLogin>(user,HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/forgetPassword",produces=MediaType.APPLICATION_JSON_VALUE)

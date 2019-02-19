@@ -1,150 +1,106 @@
- <!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> 
-  <!-- <script src="/js/PostRequest.js"> -->
-  <script>
-/*   $(document).ready(function() {
-		
-		// SUBMIT FORM
-	    $("#login").submit(function(event) {
-			// Prevent the form from submitting via the browser.
-			event.preventDefault();
-			ajaxPost();
-		});    
-	    
-	    function ajaxPost(){
-	    	
-	    	// PREPARE FORM DATA
-	    	var formData = {
-	    		userName : $("#userName").val(),
-	    		password :  $("#userPassword").val()
-	    	}
-	    	alert(userName)
-	    	// DO POST
-	    	$.ajax({
-				type : "POST",
-				contentType : "application/json",
-				url : "http://localhost:8080/FundooNoteApp/read",
-				data : JSON.stringify(formData),
-				dataType : 'json',
-				success : function(result) {
-					if(result.status == "Done"){
-						$("#postResultDiv").html("<p style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>" + 
-													"Post Successfully! <br>" +
-													"---> User Name = " + 
-													result.data.userName + " ,Password = " + result.data.password + "</p>");
-					}else{
-						$("#postResultDiv").html("<strong>Error</strong>");
-					}
-					console.log(result);
-				},
-				error : function(e) {
-					alert("Error!")
-					console.log("ERROR: ", e);
-				}okloi
-			});    	
-	    	// Reset FormData after Posting
-	    	resetData(); 
-	    }
-	    
-	    function resetData(){
-	    	$("#userName").val("");
-	    	$("#userPassword").val("");
-	    }
-	}) */	
-  </script>
-  <style>
-  body {
-  	font-family: 'Robota',sans-sarif; 
-  }
-  .main-section {
-  	margin: 0 auto; 
-  	margin-top: 100px;
-  	padding: 0;
-  }
-  .modal-content {
-  	background-color: #3b4652;
-  	opacity: .95;
-  	padding: 0 16px;
-  	box-shadow: 0px 0px 3px #848484;
-  }
-  .user-img {
-  	margin-top: -50px;
-  	margin-bottom: 40px;
-  }
-  .user-img img {
-  	height: 100px;
-  	width: 100px;
-  	border-radius: 5px;
-  	box-shadow: 0px 0px 2px #848484;
-  }
-  .form-group {
-  	margin-bottom: 20px;
-  }
-  .form-group input {
-  	height: 32px;
-  	border-radius: 5px;
-  	border: 0;
-  	font-size: 15px;
-  }
-  button {
-	width: 40%;
-	margin: 5px 0 25px;
-  }
-  .btn {
-  	background-color: #27c2a5;
-  	color: #fff;
-  	font-size: 18px;
-  	padding: 6px;
-  	border-radius:9px; 
-  	border-bottom: 4px solid #219882; 
-  }
-  a {
-  	font-size: 18px;
-  	color: white;
-  }
-  b {	
-  	font-size: 18px;
-  	color: white;
-  }
-  .modal-content {
-  	border-radius: 15px;
-  }
-  </style>
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>User Managaement</title>   
 </head>
 <body>
-	<div class="modal-dialog text-center">
-		<h2>Login Page</h2>
-		<div class="col-sm-8 main-section">
-			<div class="modal-content">
-				<div class="col-12 user-img">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8aCnkLH2IZazN-VzDOxaUULroyr4k2PP2a2Dus-icLcL49gBC">				
-				</div>
-				<form class="col-12">
-					<div class="form-group">
-						<b><p class="text-left">Username</p></b>
-						<input type="text" class="form-control" id="userName" placeholder="Enter EmailId">
-					</div>
-					<div class="form-group">
-						<b><p class="text-left">Password</p></b>
-						<input type="password" class="form-control" id="passwd" placeholder="Enter Password">
-					</div>
-					<button id="login"  type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
-				</form>
-				<div class="col-12">
-					<a href="ForgetPassword.jsp">Forget Password</a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="d-flex justify-content-lg-center  " style="padding-top: 150px">
+            <div class="well well-lg col-lg-4s" style="padding-top: 50px">
+                <!-- <img src="mi-logo.jpg" class="img-circle center-block" alt="Cinque Terre"> -->
+                <div class="d-flex justify-content-center">
+                    <p>Login to our account</p>
+                </div>
+                <form id="loginverify">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group ">
+                                <input type="email" id="userName" class="form-control" placeholder="Enter Username">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group ">
+                                <input type="password" id="userPassword" class="form-control" placeholder="Enter Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button class="btn btn-primary btn-lg-3 btn-block" type="submit">Login </button>
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    <span class="glyphicon glyphicon-lock">
+                        <a href="ForgetPassword.jsp" class="btn btn-link">Forget password?</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
+    <script>
+            $(document).ready(function () {
+                $("#loginverify").submit(function (event) {
+                    event.preventDefault();
+                    ajaxPost();    
+                });
+                function ajaxPost() {
+    
+                    // PREPARE FORM DATA
+                    var formData = {
+                        userName: $("#userName").val(),
+                        password: $("#userPassword").val()
+                    }
+                    console.log(formData.userName, formData.password);                
+                    $.ajax({    
+		                type : "POST",
+		                contentType : "application/json",
+		                url :  "http://localhost:8080/FundooNoteApp/read",
+		                data : JSON.stringify(formData),
+		                dataType : 'json',
+		                beforeSend: function(xhr) {
+		                xhr.setRequestHeader("Accept", "application/json");
+		                xhr.setRequestHeader("Content-Type", "application/json");
+            	   },
+	               success : function(result) {
+	                   if(result.status == "done"){
+	                       console.log('hello');
+	                       /* window.location = 'file:///home/bridgeit/Documents/UserManagement/check.html'; */
+	                       }
+	               	       else{
+                            console.log('error')
+                    alert('invalid username and password')
+                        }
+                    console.log(result);
+                }
+            });
+            resetData();
+        }
+        function resetData(){
+        $("#userName").val("");
+        $("#userPassword").val("");
+    }
+            }
+            )    
+        </script>
 </body>
+
 </html>

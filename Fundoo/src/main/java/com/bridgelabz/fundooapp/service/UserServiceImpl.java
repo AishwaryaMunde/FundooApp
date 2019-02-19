@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bridgelabz.fundooapp.dao.UserDaoImpl;
+import com.bridgelabz.fundooapp.model.UserLogin;
 import com.bridgelabz.fundooapp.model.Userdata;
 import com.bridgelabz.fundooapp.utility.Utility;
 
@@ -21,7 +22,9 @@ public class UserServiceImpl implements IUserService{
 		return user;
 	}
 
-	public String read(String userName, String password) {
+	public String read(UserLogin user) {
+		String userName=user.getUserName();
+		String password = user.getUserPassword();
 		System.out.println("in service : "+userName+" "+password);
 		dao.readUser(userName,password);
 		return userName;

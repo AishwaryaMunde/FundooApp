@@ -5,7 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +23,7 @@ public class UserController
 {
 	@Autowired
 	IUserService service;
+	
 	/**This method process the data coming from server to service 
 	 * @param user is reference variable of model class ie Fundoouserdata 
 	 * @param bindingResult is an interface 
@@ -39,13 +42,17 @@ public class UserController
 	 * @param password is user input to verify user
 	 * @return email id of that user
 	 */
-	@RequestMapping(value = "/read", method = RequestMethod.POST,
-			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> readUser(@RequestParam String emailId , @RequestParam String password)
+//	/*
+//	 * @RequestMapping(value = "/read", method = RequestMethod.POST,
+//	 * produces=MediaType.APPLICATION_JSON_VALUE,
+//	 * consumes=MediaType.APPLICATION_JSON_VALUE)
+//	 */
+	@PostMapping("/read")
+	public ResponseEntity<?> readUser(@RequestBody Fundoouserdata user)
 	{
-		System.out.println(emailId+" "+password);
+		System.out.println(user.getUserName()+" "+user.getPassword());
 		//service.readUser(emailId, password);
-		return new ResponseEntity<String>(emailId,HttpStatus.OK);
+		return new ResponseEntity<String>(user.getUserName(),HttpStatus.OK);
 	}
 	
 	/**This method take unique id to update user data and sent to service implementation 
@@ -62,7 +69,7 @@ public class UserController
 		return new ResponseEntity<String>(id,HttpStatus.OK);
 	}
 	
-	/**This method is to take request to delete particular user with id=?
+	/**This method is to take request to delete particular user with id
 	 * & send request to service class for further process 
 	 * @param id is unique number assign to that particular user
 	 * @return id 
