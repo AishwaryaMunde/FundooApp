@@ -25,8 +25,14 @@ public class UserServiceImpl implements IUserService{
 	public String read(UserLogin user) {
 		String userName=user.getUserName();
 		String password = user.getUserPassword();
-		dao.readUser(userName,password);
-		return userName;
+		if(dao.readUser(userName,password))
+		{
+			return "done";
+		}
+		else 
+		{
+			return "0";
+		}
 	}
 
 	public String forgetPassword(String emailId) {

@@ -33,7 +33,8 @@ public class UserDaoImpl implements IUserdao {
     	return user;
 	}
 
-	public String readUser(String userName, String password) {
+	public boolean readUser(String userName, String password) {
+		boolean userFound=false;
 		Query query = session.createQuery("from Userdata where Username=:userName and Password=:password");
     	query.setParameter("userName",userName);
     	query.setParameter("password",password);
@@ -41,12 +42,14 @@ public class UserDaoImpl implements IUserdao {
     	if(list != null && list.size()>0)
     	{
     		System.out.println(list);
-    		//userFound = true;
+    		userFound = true;
     	}
+    	else
+    		return userFound=false;
     	transaction.commit();
 //    	session.close();
 //    	factory.close();
-		return userName;
+		return userFound;
 	}
 
 	public String getPassword(String emailId) {

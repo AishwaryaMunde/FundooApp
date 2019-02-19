@@ -37,7 +37,9 @@
         success : function(result) {
             if(result.status == "done"){
                 console.log('hello');
-                window.location = '/Fundoo/src/main/webapp/Dashboard.jsp';
+                $.get('Dashboard.jsp');
+                /* var redirectUrl=; */
+                /* window.location.href= "Dashboard.jsp"; */
                 }
         	    else{
                 	console.log('error')
