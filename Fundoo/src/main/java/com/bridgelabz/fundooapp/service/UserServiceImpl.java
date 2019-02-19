@@ -25,7 +25,6 @@ public class UserServiceImpl implements IUserService{
 	public String read(UserLogin user) {
 		String userName=user.getUserName();
 		String password = user.getUserPassword();
-		System.out.println("in service : "+userName+" "+password);
 		dao.readUser(userName,password);
 		return userName;
 	}

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
         success : function(result) {
             if(result.status == "done"){
                 console.log('hello');
-                window.location = 'Dashboard.jsp';
+                window.location = '/Fundoo/src/main/webapp/Dashboard.jsp';
                 }
         	    else{
                 	console.log('error')

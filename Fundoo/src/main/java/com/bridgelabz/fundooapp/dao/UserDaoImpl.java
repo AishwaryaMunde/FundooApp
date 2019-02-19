@@ -44,8 +44,8 @@ public class UserDaoImpl implements IUserdao {
     		//userFound = true;
     	}
     	transaction.commit();
-    	session.close();
-    	factory.close();
+//    	session.close();
+//    	factory.close();
 		return userName;
 	}
 

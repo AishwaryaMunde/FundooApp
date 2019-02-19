@@ -34,9 +34,8 @@ public class UserController {
 	public ResponseEntity<?> read(@RequestBody UserLogin user)
 	{
 		System.out.println(user.getUserName()+" "+user.getUserPassword());
-		System.out.println("in read");
 		service.read(user);
-		return new ResponseEntity<UserLogin>(user,HttpStatus.OK);
+		return new ResponseEntity<String>("done",HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/forgetPassword",produces=MediaType.APPLICATION_JSON_VALUE)
