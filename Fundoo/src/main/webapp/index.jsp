@@ -26,7 +26,7 @@
          $.ajax({    
              type : "POST",
              contentType : "application/json",
-             url :  "http://localhost:8080/Fundoo/read",
+             url :  "http://localhost:8080/Fundoo/verifyUser",
              data : JSON.stringify(formData),
              dataType : 'json',
              beforeSend: function(xhr) {

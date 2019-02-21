@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +32,7 @@ public class UserController {
 		return new ResponseEntity<Userdata>(user,HttpStatus.OK);
 	}
 	
-	@PostMapping("/read")
+	@PostMapping("/verifyUser")
 	public ResponseEntity<Response> read(@RequestBody UserLogin user)
 	{
 		System.out.println(user.getUserName()+" "+user.getUserPassword());
@@ -42,7 +43,7 @@ public class UserController {
 		return new ResponseEntity<Response>(response,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/forgetPassword",produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping("/getPassword")
 	public ResponseEntity<?> getPassword(@RequestParam String emailId)
 	{
 		System.out.println("email id : "+emailId);
