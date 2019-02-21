@@ -60,8 +60,8 @@ public class UserDaoImpl implements IUserdao {
 		String user = (String)query.uniqueResult();
 		System.out.println(user);
     	transaction.commit();
-    	session.close();
-    	factory.close();
+//    	session.close();
+//    	factory.close();
 		return user;				
 	}
 }

@@ -43,6 +43,8 @@ public class Userdata {
 	private String password;
 	@Column(name="Status")
 	private String status;
+	@Column(name="Role")
+	private String role;
 	
 	public Userdata() {
 	}
@@ -150,11 +152,19 @@ public class Userdata {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
-		return "Fundoouserdata [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
+		return "Userdata [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
 				+ lastName + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", country=" + country + ", phone="
 				+ phone + ", phoneExt=" + phoneExt + ", emailId=" + emailId + ", address=" + address + ", userName="
-				+ userName + ", password=" + password + ", status=" + status + "]";
+				+ userName + ", password=" + password + ", status=" + status + ", role=" + role + "]";
 	}
 }
