@@ -1,106 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <title>User Managaement</title>   
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <style>
+  .card {
+        margin: 100px auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 50px; /* Added */   
+        width: 20rem;
+        height: 23rem;    
+	}
+  h2 {
+   padding: 20px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
+  }
+  h2 {
+   padding: 20px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
+  }
+  .alert {
+  	 padding: 10px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
+  }
+  input {
+   padding: 20px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
+  }
+  .form-control {
+	   padding: 10px;
+	   /* border: 1px solid grey; */
+	   margin : 10px;
+	   width: 97%;
+  }
+  </style>
+  
 </head>
 <body>
-    <div class="container">
-        <div class="d-flex justify-content-lg-center  " style="padding-top: 150px">
-            <div class="well well-lg col-lg-4s" style="padding-top: 50px">
-                <!-- <img src="mi-logo.jpg" class="img-circle center-block" alt="Cinque Terre"> -->
-                <div class="d-flex justify-content-center">
-                    <p>Login to our account</p>
-                </div>
-                <form id="loginverify">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group ">
-                                <input type="email" id="userName" class="form-control" placeholder="Enter Username">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group ">
-                                <input type="password" id="userPassword" class="form-control" placeholder="Enter Password">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <button class="btn btn-primary btn-lg-3 btn-block" type="submit">Login </button>
-                        </div>
-                    </div>
-                </form>
-                <div>
-                    <span class="glyphicon glyphicon-lock">
-                        <a href="ForgetPassword.jsp" class="btn btn-link">Forget password?</a>
-                    </span>
-                </div>
-            </div>
-        </div>
+ 
+<div class="container">
+  <div class="card">
+    <div class="card-body text-center">
+    	<img src="http://www.ittutorials.in/images/mi-logo.jpg">
+    	<h5>Login to your account</h5>
+    	<input type="text" id="userName" class="form-control" placeholder="Username">
+    	<input type="password" id="password" class="form-control" placeholder="Password">
+    	<button type="button" class="btn btn-primary form-control" >LOGIN</button>
+    	<span>
+    		<ion-icon name="lock"></ion-icon>
+    	</span>
+    	<a href="ForgetPassword.jsp">Forget Password?</a>
     </div>
+  </div>
+</div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
-    <script>
-            $(document).ready(function () {
-                $("#loginverify").submit(function (event) {
-                    event.preventDefault();
-                    ajaxPost();    
-                });
-                function ajaxPost() {
-    
-                    // PREPARE FORM DATA
-                    var formData = {
-                        userName: $("#userName").val(),
-                        password: $("#userPassword").val()
-                    }
-                    console.log(formData.userName, formData.password);                
-                    $.ajax({    
-		                type : "POST",
-		                contentType : "application/json",
-		                url :  "http://localhost:8080/FundooNoteApp/read",
-		                data : JSON.stringify(formData),
-		                dataType : 'json',
-		                beforeSend: function(xhr) {
-		                xhr.setRequestHeader("Accept", "application/json");
-		                xhr.setRequestHeader("Content-Type", "application/json");
-            	   },
-	               success : function(result) {
-	                   if(result.status == "done"){
-	                       console.log('hello');
-	                       /* window.location = 'file:///home/bridgeit/Documents/UserManagement/check.html'; */
-	                       }
-	               	       else{
-                            console.log('error')
-                    alert('invalid username and password')
-                        }
-                    console.log(result);
-                }
-            });
-            resetData();
-        }
-        function resetData(){
-        $("#userName").val("");
-        $("#userPassword").val("");
-    }
-            }
-            )    
-        </script>
 </body>
-
 </html>

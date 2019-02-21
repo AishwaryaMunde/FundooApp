@@ -31,7 +31,7 @@ public class UserServiceImpl implements IUserService{
 		}
 		else 
 		{
-			return "0";
+			return "fail";
 		}
 	}
 

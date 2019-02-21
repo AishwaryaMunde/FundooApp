@@ -9,18 +9,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
- <script>
-  function openNav() {
-    document.getElementById("sidebar").style.width = "250px";
-    document.getElementById("navbarTogglerDemo01").style.marginLeft = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("navbarTogglerDemo01").style.marginLeft= "0";
-  }
-  </script>	
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <style>
 option {
 	font-weight: normal;
@@ -33,7 +23,6 @@ option {
 .form-group {
 	margin-bottom: 15px;
 }
-
 </style>
 </head>
 <body>

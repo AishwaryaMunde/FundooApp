@@ -35,9 +35,10 @@ public class UserDaoImpl implements IUserdao {
 
 	public boolean readUser(String userName, String password) {
 		boolean userFound=false;
-		Query query = session.createQuery("from Userdata where Username=:userName and Password=:password");
+		Query query = session.createQuery("from Userdata where Username=:userName and Password=:password and Role=:admin");
     	query.setParameter("userName",userName);
     	query.setParameter("password",password);
+    	query.setParameter("admin", "Admin");
     	List list = query.list();
     	if(list != null && list.size()>0)
     	{

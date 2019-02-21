@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>	 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
- <script>
- $(document).ready(function () {
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script>
+ 	 $(document).ready(function () {
      $("#loginverify").submit(function (event) {
          event.preventDefault();
          ajaxPost();    
@@ -34,9 +34,10 @@
              xhr.setRequestHeader("Content-Type", "application/json");
  	   },
         success : function(result) {
-            if(result.status == "done"){
+            console.log(result.status);
+            if(result.status== "done"){                
                 console.log('hello');
-                window.location= "Dashboard.jsp";
+                location.href="Dashboard.jsp";
                 }
         	    else{
                 	console.log('error')
@@ -54,91 +55,82 @@ $("#userPassword").val("");
  }
  )    
 </script>
-
+  
   <style>
-  body {
-  	font-family: 'Robota',sans-sarif; 
+  .card {
+        margin: 100px auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 50px; /* Added */   
+        width: 25rem;
+        height: 23rem;    
+	}
+  h2 {
+   padding: 20px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
   }
-  .main-section {
-  	margin: 0 auto; 
-  	margin-top: 100px;
-  	padding: 0;
+  h2 {
+   padding: 20px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
   }
-  .modal-content {
-  	background-color: #3b4652;
-  	opacity: .95;
-  	padding: 0 10px;
-  	box-shadow: 0px 0px 3px #848484;
+  h6 {
+  	padding: 20px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
   }
-  .user-img {
-  	margin-top: -50px;
-  	margin-bottom: 40px;
+  .alert {
+  	 padding: 10px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
   }
-  .user-img img {
-  	height: 100px;
-  	width: 100px;
-  	border-radius: 5px;
-  	box-shadow: 0px 0px 2px #848484;
+  input {
+   padding: 20px;
+   /* border: 1px solid grey; */
+   margin : 10px;
+   width: 97%;
   }
-  .form-group {
-  	margin-bottom: 23px;
-  }
-  .form-group input {
-  	height: 32px;
-  	border-radius: 5px;
-  	border: 0;
-  	font-size: 13px;
-  }
-  button {
-	width: 40%;
-	margin: 5px 0 25px;
-  }
-  .btn {
-  	background-color: #27c2a5;
-  	color: #fff;
-  	font-size: 18px;
-  	padding: 6px;
-  	border-radius:9px; 
-  	border-bottom: 4px solid #219882; 
-  }
-  a {
-  	font-size: 18px;
-  	color: white;
-  }
-  b {	
-  	font-size: 18px;
-  	color: white;
-  }
-  .modal-content {
-  	border-radius: 15px;
+  .form-control {
+	   padding: 10px;
+	   /* border: 1px solid grey; */
+	   margin : 10px;
+	   width: 97%;
   }
   </style>
-
+  
 </head>
 <body>
-	<div class="modal-dialog text-center">
-		<h2>Login Page</h2>
-		<div class="col-sm-8 main-section">
-			<div class="modal-content">
-				<div class="col-12 user-img">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8aCnkLH2IZazN-VzDOxaUULroyr4k2PP2a2Dus-icLcL49gBC">				
-				</div>
-				<form class="col-12" id="loginverify">
-					<div class="form-group">
-						<b><p class="text-left">Username</p></b>
-						<input id="userName" type="text" class="form-control" placeholder="Abc" required>
-					</div>
-					<div class="form-group">
-						<b><p class="text-left">Password</p></b>
-						<input id="userPassword" type="password" class="form-control" placeholder="Abc@1234" required>
-					</div>
-					<button id="login" type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Login</button>
-				</form>
-				<div class="col-12">
-					<a href="ForgetPassword.jsp">Forget Password</a>
-				</div>
-			</div>
-		</div>
-	</div>
+ 
+<div class="container">	
+  <div class="card">
+    <div class="card-body text-center">
+    	 <form id="loginverify">
+    		<img src="http://www.ittutorials.in/images/mi-logo.jpg">
+    		<h6>Login to your account</h6>
+    	
+	    	<input type="text" id="userName" class="form-control" placeholder="Username">
+	    	<input type="password" id="userPassword" class="form-control" placeholder="Password">
+	    	<!-- <div class="form-group clearfix">
+	    		<input type="checkbox" data-color="blue" data-switchery="small">
+	    		<span class="switchery switchery-small" style="background-color: rgb(69, 174, 239); border-color: rgb(69, 174, 239); box-shadow: rgb(69, 174, 239) 0px 0px 0px 11px inset; transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;">
+	    		<small style="left: 12px; background-color: rgb(255, 255, 255); transition: background-color 0.4s ease 0s, left 0.2s ease 0s;">
+	    		</small>
+	    		</span>
+	    		<lable class="control-lable">Remember Me</lable>
+	    	</div> -->
+	    	<button type="submit" class="btn btn-primary form-control" >LOGIN</button>
+    	</form>
+    	<span>
+    		<ion-icon name="lock"></ion-icon>
+    	</span>
+    	<a href="ForgetPassword.jsp">Forget Password?</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
