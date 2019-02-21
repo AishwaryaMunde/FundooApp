@@ -114,14 +114,6 @@ $("#userPassword").val("");
     	
 	    	<input type="text" id="userName" class="form-control" placeholder="Username">
 	    	<input type="password" id="userPassword" class="form-control" placeholder="Password">
-	    	<!-- <div class="form-group clearfix">
-	    		<input type="checkbox" data-color="blue" data-switchery="small">
-	    		<span class="switchery switchery-small" style="background-color: rgb(69, 174, 239); border-color: rgb(69, 174, 239); box-shadow: rgb(69, 174, 239) 0px 0px 0px 11px inset; transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;">
-	    		<small style="left: 12px; background-color: rgb(255, 255, 255); transition: background-color 0.4s ease 0s, left 0.2s ease 0s;">
-	    		</small>
-	    		</span>
-	    		<lable class="control-lable">Remember Me</lable>
-	    	</div> -->
 	    	<button type="submit" class="btn btn-primary form-control" >LOGIN</button>
     	</form>
     	<span>
