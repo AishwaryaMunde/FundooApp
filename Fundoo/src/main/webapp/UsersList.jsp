@@ -180,9 +180,10 @@
 					<ul class="nav navbar-nav navbar-right ml-auto">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"> <span style="float: right;">Admin
-							</span><b class="fa fa-angle-down"></b></a>
+									</span><b class="fa fa-angle-down"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="Profile.jsp"><ion-icon name="person"></ion-icon>
+								<li><a href="Profile.jsp"><ion-icon
+								name="person"></ion-icon>
 										Profile</a></li>
 								<li class="divider"></li>
 								<li><a href="index.jsp"><ion-icon name="power"></ion-icon>
@@ -197,8 +198,7 @@
 		<div id="side-wrapper" class="active">
 			<nav id="spy">
 				<ul class="side-nav nav">
-					<li><a href="Dashboard.jsp" style="color: white"><ion-icon
-								name="cloudy"></ion-icon>Dashboard</a></li>
+					<li><a href="Dashboard.jsp" style="color: white"><ion-icon name="cloudy"></ion-icon>Dashboard</a></li>
 					<li><a href="#" data-toggle="collapse"
 						data-target="#submenu-1" style="color: white"><ion-icon
 								name="person"></ion-icon> User </a>
@@ -206,8 +206,7 @@
 							<li><a href="Register.jsp"></i>New user</a></li>
 							<li><a href="UsersList"></i> User List</a></li>
 						</ul></li>
-					<li><a href="Profile.jsp" style="color: white"><ion-icon
-								name="list-box"></ion-icon>Profile</a></li>
+					<li><a href="Profile.jsp" style="color: white"><ion-icon name="list-box"></ion-icon>Profile</a></li>
 					<li><a href="index.jsp" style="color: white"><ion-icon
 								name="power"></ion-icon>Logout</a></li>
 				</ul>
@@ -223,28 +222,23 @@
 						<div class="well"
 							style="padding-top: 80px; background-color: white">
 							<p style="text-align: left;">
-								Profile <span style="float: right;"> <a
-									href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a>
-									/ Dashboard
-								</span>
+								Users <span style="float: right;"> <a href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a> / Dashboard</span>
 							</p>
 						</div>
 					</div>
 					<div class=" container-fluid">
 						<div class="panel panel"></div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-md-5">
-							<div class="well">Picture
-								<img src="/home/admin1/Pictures/Aishu.jpg">
-							</div>
+							<div class="well">Picture</div>
 						</div>
 						<div class="col-md-5">
-						<!-- style="background-color: burlywood" -->
+						style="background-color: burlywood"
 							<div class="well" >active
 								45</div>
 						</div>
-					</div> 
+					</div> -->
 				</div>
 			</div>
 		</div>

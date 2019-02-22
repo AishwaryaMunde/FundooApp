@@ -172,14 +172,12 @@ float: right;
 					</div>
 					<ul class="nav navbar-nav navbar-right ml-auto">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"> <span style="float: right;">Admin User </span><b class="fa fa-angle-down"></b></a>
+							data-toggle="dropdown"> <span style="float: right;">Admin</span><b class="fa fa-angle-down"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="fa fa-fw fa-user"></i> Edit
+								<li><a href="Profile.jsp"><ion-icon name="person"></ion-icon>
 										Profile</a></li>
-								<li><a href="#"><i class="fa fa-fw fa-cog"></i> Change
-										Password</a></li>
 								<li class="divider"></li>
-								<li><a href="#"><ion-icon name="power"></ion-icon>
+								<li><a href="index.jsp"><ion-icon name="power"></ion-icon>
 										Logout</a></li>
 							</ul>
 						</li>
@@ -192,7 +190,7 @@ float: right;
 		<div id="side-wrapper" class="active">
 			<nav id="spy">
 				<ul class="side-nav nav">
-					<li><a href="" style="color: white"><i class="fa fa-fw fa fa-question-circle"></i>Dashboard</a>
+					<li><a href="Dashboard.jsp" style="color: white"><ion-icon name="cloudy"></ion-icon>Dashboard</a>
 					</li>
 					<li><a href="#" data-toggle="collapse"
 						data-target="#submenu-1" style="color: white"><ion-icon name="person"></ion-icon>
@@ -200,11 +198,10 @@ float: right;
 						<ul id="submenu-1" class="collapse">
 							<li><a
 								href="Register.jsp"></i>New	user</a></li>
-							<li><a href="#"></i> User List</a></li>
+							<li><a href="UsersList.jsp"></i> User List</a></li>
 						</ul></li>
 					<li><a
-						href="#" style="color: white"><i
-							class="fa fa-fw fa-user-plus"></i>Profile</a></li>
+						href="Profile.jsp" style="color: white"><ion-icon name="list-box"></ion-icon>Profile</a></li>
 					<li><a
 						href="index.jsp" style="color: white"><ion-icon name="power"></ion-icon>Logout</a></li>
 				</ul>
@@ -221,7 +218,7 @@ float: right;
 							style="padding-top: 80px; background-color: white">
 							<p style="text-align: left;">
 								Welcome Admin <span style="float: right;"> <a
-									href=""><i class="fa fa-home "></i>Home</a> / <a href="">Dashboard</a></span>
+									href=""><ion-icon name="home"></ion-icon>Home</a> / Dashboard</span>
 							</p>
 						</div>
 					</div>
