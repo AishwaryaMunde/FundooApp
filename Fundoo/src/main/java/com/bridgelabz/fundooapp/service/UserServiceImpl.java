@@ -1,5 +1,7 @@
 package com.bridgelabz.fundooapp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,5 +43,11 @@ public class UserServiceImpl implements IUserService{
 		System.out.println("password : "+password);
 		Utility.emailSend(emailId,password);
 		return emailId;
+	}
+
+	public List fetchAllUserData() {
+		List list = dao.fetchAllUsers();
+		System.out.println("in service : " +list);
+		return list;
 	}
 }

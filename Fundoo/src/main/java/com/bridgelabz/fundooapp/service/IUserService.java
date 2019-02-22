@@ -1,5 +1,7 @@
 package com.bridgelabz.fundooapp.service;
 
+import java.util.List;
+
 import com.bridgelabz.fundooapp.model.UserLogin;
 import com.bridgelabz.fundooapp.model.Userdata;
 
@@ -10,4 +12,6 @@ public interface IUserService {
 	public String read(UserLogin user);
 
 	public String forgetPassword(String emailId);
+
+	public List fetchAllUserData();
 }

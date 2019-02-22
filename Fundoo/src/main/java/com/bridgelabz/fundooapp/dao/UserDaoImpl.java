@@ -64,4 +64,15 @@ public class UserDaoImpl implements IUserdao {
 //    	factory.close();
 		return user;				
 	}
+
+	public List fetchAllUsers() {
+		Query query = session.createQuery("from Userdata");
+    	List<Userdata> list = query.list();      //used when more one record is going to print
+    	for(Userdata user : list)
+    	{
+    		System.out.println(user);          //this loop is used to print multiple records
+    	}
+    	transaction.commit();
+		return list;
+	}
 }
