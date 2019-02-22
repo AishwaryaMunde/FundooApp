@@ -5,9 +5,9 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="Dashboard.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 
 </head>
@@ -155,6 +155,9 @@
 	left: auto !important;
 	right: 0px;
 }
+.well .row{
+padding : 9px;
+} 
 </style>
 <body>
 	<div id="wrapper">
@@ -234,15 +237,25 @@
 						<div class="panel panel"></div>
 					</div>
 					<div class="row">
-						<div class="col-md-5">
-							<div class="well">Picture
-								<img src="/home/admin1/Pictures/Aishu.jpg">
+						<div class="col-md-5 " >
+							<div class="well thumbnail">Picture
+								<img src="https://encrypted-tbn0.gstatic.com/images?
+								q=tbn:ANd9GcRxX1FtS7ef7YyMBAINEUebiZ1weAKxgHtkV_MIqwrmjSUr493J">
 							</div>
 						</div>
 						<div class="col-md-5">
 						<!-- style="background-color: burlywood" -->
-							<div class="well" >active
-								45</div>
+							<div class="well" >
+								<div class="row">First Name : </div> 
+								<div class="row">Middle Name : </div>
+								<div class="row">Last Name : </div>
+								<div class="row">Date Of Birth : </div>
+								<div class="row">Gender : </div>
+								<div class="row">Country : </div>
+								<div class="row">Phone : </div>
+								<div class="row">Phone + Ext : </div>
+								<div class="row">Address : </div>
+							</div>
 						</div>
 					</div> 
 				</div>
