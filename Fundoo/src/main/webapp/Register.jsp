@@ -168,8 +168,8 @@ option {
 	margin-bottom: 15px;
 }
 
-.col-md-3 .well {
-	width: 700px;
+.row .col-md-3 .well {
+	width: 650px;
 	height: 570px;
 }
 </style>
@@ -184,7 +184,6 @@ option {
 						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 						aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span>
-
 					</button>
 					<div class="navbar-brand">
 						<a id="menu-toggle" class="active">
@@ -206,7 +205,8 @@ option {
 								<li class="divider"></li>
 								<li><a href="#"><ion-icon name="power"></ion-icon>
 										Logout</a></li>
-							</ul></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -396,9 +396,48 @@ option {
 									</div>
 								</div>
 							</div>
-
 						</div>
+						<div class="col-md-4">
+				<div class="panel panel-heading">
+					<div class="panel-heading">
+						<h3 class="panel-title">Photo</h3>
+						<p class="panel-subtitle"></p>
 					</div>
+					<div class="panel-body">
+						<div id="pic">
+							<div class="row">
+								<div class="col-md-12">
+									<div id="divPreviewPhoto" class="text-center" style="display: none;">
+										<!-- center tag here -->
+										<input type="button" class="btn btn-default btn-sm" value="Change Photo" onclick="uploadPhoto();">
+									</div>
+								</div><!-- col-md-12 -->
+							</div><!-- row -->
+							<div class="row">
+								<div class="col-md-12">
+									<div id="divUploadPhoto">	
+										<label class="control-label">Acceptable image formats are jpg, jpeg, png & gif. </label><br>
+										<label class="control-label">Maximum image size allowed is 2MB. </label><br>
+										<div class="dropify-wrapper">
+											<div class="dropify-message">
+												<span class="file-icon">
+													<p>Click here to choose file</p></span>
+													<p class="dropify-error">Oop's something went wrong</p>												
+											</div>
+											<div class="dropify-loader"></div>
+											<div class="dropify-errors-container">
+												<ul></ul>
+											</div>
+											<input type="file" id="chooseImageFile">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> <!-- id=pic  -->
+					</div><!--panel body  -->
+				</div><!-- panel panel-heading end -->
+					</div>
+				
 				</div>
 			</div>
 			<!-- /#page-wrapper -->
