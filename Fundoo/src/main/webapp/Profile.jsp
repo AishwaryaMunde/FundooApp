@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#loginverify").submit(function(event) {
+			event.preventDefault();
+			ajaxPost();
+		});
+		function ajaxPost() {
+
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "http://localhost:8080/Fundoo/verifyUser",
+				data : JSON.stringify(formData),
+				dataType : 'json',
+				beforeSend : function(xhr) {
+					xhr.setRequestHeader("Accept", "application/json");
+					xhr.setRequestHeader("Content-Type", "application/json");
+				},
+				success : function(result) {
+					console.log(result.status);
+					if (result.status == "done") {
+						console.log('hello');
+						location.href = "Dashboard.jsp";
+					} else {
+						console.log('error')
+						alert('invalid username and password')
+					}
+					console.log(result);
+				}
+			});
+			resetData();
+		}
+		function resetData() {
+			$("#userName").val("");
+			$("#userPassword").val("");
+		}
+	})
+</script>
 </head>
 <style>
 .top-nav {
@@ -155,9 +195,14 @@
 	left: auto !important;
 	right: 0px;
 }
-.well .row{
-padding : 9px;
-} 
+
+.tab-content {
+	padding: 30px;
+}
+
+.row>a {
+	margin: 12px;
+}
 </style>
 <body>
 	<div id="wrapper">
@@ -214,8 +259,6 @@ padding : 9px;
 					<li><a href="index.jsp" style="color: white"><ion-icon
 								name="power"></ion-icon>Logout</a></li>
 				</ul>
-
-				<!-- /.navbar-collapse -->
 			</nav>
 		</div>
 
@@ -237,33 +280,83 @@ padding : 9px;
 						<div class="panel panel"></div>
 					</div>
 					<div class="row">
-						<div class="col-md-5 " >
-							<div class="well thumbnail">Picture
-								<img src="https://encrypted-tbn0.gstatic.com/images?
-								q=tbn:ANd9GcRxX1FtS7ef7YyMBAINEUebiZ1weAKxgHtkV_MIqwrmjSUr493J">
+						<div class="col-md-5 ">
+							<div class="media">
+								<div class="thumbnail">
+									Picture <img
+										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2j_EADnakDOXR0E0mq8PH46rdzs2JKCGYqDiu0RFp9oDzgtTx"
+										alt="Basic info">
+								</div>
 							</div>
 						</div>
 						<div class="col-md-5">
-						<!-- style="background-color: burlywood" -->
-							<div class="well" >
-								<div class="row">First Name : </div> 
-								<div class="row">Middle Name : </div>
-								<div class="row">Last Name : </div>
-								<div class="row">Date Of Birth : </div>
-								<div class="row">Gender : </div>
-								<div class="row">Country : </div>
-								<div class="row">Phone : </div>
-								<div class="row">Phone + Ext : </div>
-								<div class="row">Address : </div>
+							<ul class="nav nav-tabs" id="myTab">
+								<li class="active"><a href="#sectionA">General
+										Information</a></li>
+								<li><a href="#sectionB">Login History</a></li>
+							</ul>
+							<div class="tab-content">
+								<div id="sectionA" class="tab-pane fade in active">
+									<div class="row">
+										First Name :
+										<div style="float: right">Aishwarya</div>
+									</div>
+									<div class="row">
+										Middle Name :
+										<div style="float: right">Sanjay</div>
+									</div>
+									<div class="row">
+										Last Name :
+										<div style="float: right">Munde</div>
+									</div>
+									<div class="row">
+										Date Of Birth :
+										<div style="float: right">14 October 1997</div>
+									</div>
+									<div class="row">
+										Gender :
+										<div style="float: right">Female</div>
+									</div>
+									<div class="row">
+										Country :
+										<div style="float: right">India</div>
+									</div>
+									<div class="row">
+										Phone :
+										<div style="float: right">7391997231</div>
+									</div>
+									<div class="row">
+										Phone + Ext :
+										<div style="float: right">(+91)7391997231</div>
+									</div>
+									<div class="row">
+										Address :
+										<div style="float: right">Swargate, Pune</div>
+									</div>
+								</div>
+								<div id="sectionB" class="tab-pane fade">
+
+									<p>
+										<ion-icon name="time"></ion-icon>
+										Login history is displayed prior to the last login
+									</p>
+								</div>
 							</div>
+							<script type="text/javascript">
+								$(document).ready(function() {
+									$("#myTab a").click(function(e) {
+										e.preventDefault();
+										$(this).tab('show');
+									});
+								});
+							</script>
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
+			<!-- /#page-wrapper -->
 		</div>
-		<!-- /#page-wrapper -->
 	</div>
-
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script

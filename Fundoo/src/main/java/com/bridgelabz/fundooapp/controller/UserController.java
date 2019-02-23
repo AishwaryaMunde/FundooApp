@@ -60,4 +60,11 @@ public class UserController {
 		List list = service.fetchAllUserData();
 		return new ResponseEntity<List>(list,HttpStatus.OK);
 	}
+	
+	@RequestMapping(value="/retrieveUser")
+	public ResponseEntity<?> getUserInfo()
+	{
+		Userdata userdata = service.getUserInfo();
+		return new ResponseEntity<Userdata>(userdata,HttpStatus.OK);
+	}
 }

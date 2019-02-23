@@ -14,4 +14,6 @@ public interface IUserService {
 	public String forgetPassword(String emailId);
 
 	public List fetchAllUserData();
+
+	public Userdata getUserInfo();
 }

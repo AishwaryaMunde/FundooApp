@@ -196,13 +196,14 @@ option {
 					<ul class="nav navbar-nav navbar-right ml-auto">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"> <span style="float: right;">
-									User </span><b class="fa fa-angle-down"></b></a>
+									Admin </span><b class="fa fa-angle-down"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="Profile.jsp"><ion-icon name="person"></ion-icon>Profile</a></li>
 								<li class="divider"></li>
 								<li><a href="index.jsp"><ion-icon name="power"></ion-icon>
 										Logout</a></li>
-							</ul></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -306,20 +307,20 @@ option {
 									<div class="col-md-4 col-sm-6 col-xs-12">
 										<div class="form-group">
 											<lable class="control-lable">Country</lable>
-											<select name="country" tabindex="-1"
+											<select name="gender" tabindex="" class="form-control"
+												style="width: 100%"
 												class="select-basic select2-hidden-accessible"
-												data-bv-nonempty="empty" style="width: 100%">
-												<option value>--Choose Country--</option>
-												<option value="india">India</option>
-												<option value="america">America</option>
-												<option value="australia">Australia</option>
-												<option value="london">London</option>
-												<option value="paris">Paris</option>
-												<option value="newYork">New-York</option>
-												<option value="egypt">Egypt</option>
-												<option value="france">France</option>
-												<option value="germany">Germany</option>
-											</select> <span class="selection"></span>
+												data-bv-nonempty="empty"">
+												<option value>--Select--</option>
+												<option value>India</option>
+												<option value>America</option>
+												<option value>London</option>
+												<option value>Japan</option>
+												<option value>Germany</option>
+												<option value>Egypt</option>
+												<option value>Paris</option>
+											</select> <span class="selection"></span> <span
+												class="dropdown-wrapper" aria-hidden="true"></span>
 										</div>
 									</div>
 									<div class="col-md-4 col-sm-6 col-xs-12">
@@ -338,19 +339,21 @@ option {
 											<div class="container row">(999)999-9999-99</div>
 										</div>
 									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Email</lable>
-											<input type="text" name="email" class="form-control"
-												tabindex="9">
+									<div class="row">
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Email</lable>
+												<input type="text" name="email" class="form-control"
+													tabindex="9">
+											</div>
 										</div>
-									</div>
-									<div class="col-md-5 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Address</lable>
-											<textarea name="address" rows="5" cols="10" tabindex="10"
-												class="form-control">
-											</textarea>
+										<div class="col-md-5 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Address</lable>
+												<textarea name="address" rows="5" cols="10" tabindex="10"
+													class="form-control">
+												</textarea>
+											</div>
 										</div>
 									</div>
 									<div class="row">
@@ -450,7 +453,7 @@ option {
 				</div>
 				<!-- /#page-wrapper -->
 			</div>
-
+		</div>
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script

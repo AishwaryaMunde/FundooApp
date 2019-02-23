@@ -9,52 +9,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-  <script>
- 	 $(document).ready(function () {
-     $("#loginverify").submit(function (event) {
-         event.preventDefault();
-         ajaxPost();    
-     });
-     function ajaxPost() {
-
-         // PREPARE FORM DATA
-         var formData = {
-        	userName: $("#userName").val(),
-        	userPassword: $("#userPassword").val()
-         }
-         console.log(formData.userName, formData.userPassword);                
-         $.ajax({    
-             type : "POST",
-             contentType : "application/json",
-             url :  "http://localhost:8080/Fundoo/verifyUser",
-             data : JSON.stringify(formData),
-             dataType : 'json',
-             beforeSend: function(xhr) {
-             xhr.setRequestHeader("Accept", "application/json");
-             xhr.setRequestHeader("Content-Type", "application/json");
- 	   },
-        success : function(result) {
-            console.log(result.status);
-            if(result.status== "done"){                
-                console.log('hello');
-                location.href="Dashboard.jsp";
-                }
-        	    else{
-                	console.log('error')
-         			alert('invalid username and password')
-             	}
-         console.log(result);
-     }
- });
- resetData();
-}
-function resetData(){
-$("#userName").val("");
-$("#userPassword").val("");
-}
- }
- )    
-</script>
+  <script> 
+			$(document).ready(function() {
+								$("#loginverify").submit(function(event) {
+									event.preventDefault();
+									ajaxPost();
+								});
+								function ajaxPost() {
+									// PREPARE FORM DATA
+									var formData = {
+										userName : $("#userName").val(),
+										userPassword : $("#userPassword").val()
+									}
+									console.log(formData.userName,
+											formData.userPassword);
+									$.ajax({
+												type : "POST",
+												contentType : "application/json",
+												url : "http://localhost:8080/Fundoo/verifyUser",
+												data : JSON.stringify(formData),
+												dataType : 'json',
+												beforeSend : function(xhr) {
+													xhr.setRequestHeader(
+															"Accept",
+															"application/json");
+													xhr.setRequestHeader(
+															"Content-Type",
+															"application/json");
+												},
+												success : function(result) {
+													console.log(result.status);
+													if (result.status == "done") {
+														console.log('hello');
+														location.href = "Dashboard.jsp";
+													} else {
+														console.log('error')
+														alert('invalid username and password')
+													}
+													console.log(result);
+												}
+											});
+									resetData();
+								}
+								function resetData() {
+									$("#userName").val("");
+									$("#userPassword").val("");
+								}
+							})
+		</script>
   
   <style>
   .card {

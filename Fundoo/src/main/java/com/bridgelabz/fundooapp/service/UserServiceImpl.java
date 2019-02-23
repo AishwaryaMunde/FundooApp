@@ -50,4 +50,9 @@ public class UserServiceImpl implements IUserService{
 		System.out.println("in service : " +list);
 		return list;
 	}
+
+	public Userdata getUserInfo() {
+		
+		return null;
+	}
 }
