@@ -289,8 +289,7 @@
 										alt="Basic info">
 										<h3>Basic Info</h3>
 										<h5>Email</h5>
-										<h5>Username <div style="float: right">Admin</div></h5>
-										<button type="submit" class="btn btn-primary center-block">Edit Profile</button>
+										<h5>Username<div style="float: right;">Admin</div></h5>
 								</div>
 							</div>
 						</div>

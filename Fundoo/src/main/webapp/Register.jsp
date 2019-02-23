@@ -7,6 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="Dashboard.css">
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 
@@ -172,6 +176,31 @@ option {
 	width: 650px;
 	height: 570px;
 }
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 50%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
+
+#img-upload {
+	width: 100%;
+}
 </style>
 <body>
 	<div id="wrapper">
@@ -202,8 +231,7 @@ option {
 								<li class="divider"></li>
 								<li><a href="index.jsp"><ion-icon name="power"></ion-icon>
 										Logout</a></li>
-							</ul>
-						</li>
+							</ul></li>
 					</ul>
 				</div>
 			</div>
@@ -241,8 +269,8 @@ option {
 							style="padding-top: 80px; background-color: white">
 							<p style="text-align: left;">
 								New User <span style="float: right;"> <a
-									href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a> /
-									Dashboard
+									href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a>
+									/ Dashboard
 								</span>
 							</p>
 						</div>
@@ -285,7 +313,7 @@ option {
 												<input type="text" id="dateOfBirth" class="form-control"
 													data-bv-date="true" data-bv-date-format="MM/DD/YYYY"
 													data-bv-date-message="Invalid date of birth"> <span
-													class="input-group-addon"> <i class="fa fa-calender"></i>
+													class="input-group-addon"><ion-icon name="calendar"></ion-icon>
 												</span>
 											</div>
 										</div>
@@ -339,21 +367,19 @@ option {
 											<div class="container row">(999)999-9999-99</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-4 col-sm-6 col-xs-12">
-											<div class="form-group">
-												<lable class="control-lable">Email</lable>
-												<input type="text" name="email" class="form-control"
-													tabindex="9">
-											</div>
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<lable class="control-lable">Email</lable>
+											<input type="text" name="email" class="form-control"
+												tabindex="9">
 										</div>
-										<div class="col-md-5 col-sm-6 col-xs-12">
-											<div class="form-group">
-												<lable class="control-lable">Address</lable>
-												<textarea name="address" rows="5" cols="10" tabindex="10"
-													class="form-control">
-												</textarea>
-											</div>
+									</div>
+									<div class="col-md-5 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<lable class="control-lable">Address</lable>
+											<textarea name="address" rows="5" cols="10" tabindex="10"
+												class="form-control">
+											</textarea>
 										</div>
 									</div>
 									<div class="row">
@@ -420,27 +446,56 @@ option {
 										<!-- row -->
 										<div class="row">
 											<div class="col-md-12">
-												<div id="divUploadPhoto">
-													<label class="control-label">Acceptable image
-														formats are jpg, jpeg, png & gif. </label><br> <label
-														class="control-label">Maximum image size allowed
-														is 2MB. </label><br>
-													<div class="dropify-wrapper">
-														<div class="dropify-message">
-															<span class="file-icon">
-																<p>Click here to choose file</p>
-															</span>
-															<p class="dropify-error">Oop's something went wrong</p>
-														</div>
-														<div class="dropify-loader"></div>
-														<div class="dropify-errors-container">
-															<ul></ul>
-														</div>
-														<input type="file" id="chooseImageFile">
+												<div class="form-group">
+													<label>Upload Image</label>
+													<div class="input-group">
+														<span class="input-group-btn"> <span
+															class="btn btn-default btn-file"> Browse<input
+																type="file" id="imgInp">
+														</span>
+														</span> <input type="text" class="form-control" readonly>
 													</div>
+													<img id='img-upload' />
 												</div>
 											</div>
 										</div>
+										<script type="text/javascript">
+$(document).ready( function() {
+	$(document).on('change', '.btn-file :file', function() {
+	var input = $(this),
+		label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+	input.trigger('fileselect', [label]);
+	});
+
+	$('.btn-file :file').on('fileselect', function(event, label) {
+	    
+	    var input = $(this).parents('.input-group').find(':text'),
+	        log = label;
+	    
+	    if( input.length ) {
+	        input.val(log);
+	    } else {
+	        if( log ) alert(log);
+	    }
+    
+	});
+	function readURL(input) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        
+	        reader.onload = function (e) {
+	            $('#img-upload').attr('src', e.target.result);
+	        }
+	        
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
+
+	$("#imgInp").change(function(){
+	    readURL(this);
+	}); 	
+});
+</script>
 									</div>
 									<!-- id=pic  -->
 								</div>
@@ -448,38 +503,39 @@ option {
 							</div>
 							<!-- panel panel-heading end -->
 						</div>
-
 					</div>
 				</div>
 				<!-- /#page-wrapper -->
 			</div>
 		</div>
-			<script
-				src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script
-				src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-			<script>
-				$(function() {
-					$('[data-toggle="tooltip"]').tooltip();
-					$(".side-nav .collapse").on(
-							"hide.bs.collapse",
-							function() {
-								$(this).prev().find(".fa").eq(1).removeClass(
-										"fa-angle-right").addClass(
-										"fa-angle-down");
-							});
-					$('.side-nav .collapse').on(
-							"show.bs.collapse",
-							function() {
-								$(this).prev().find(".fa").eq(1).removeClass(
-										"fa-angle-down").addClass(
-										"fa-angle-right");
-							});
-				})
-				$("#menu-toggle").click(function(e) {
-					e.preventDefault();
-					$("#wrapper").toggleClass("active");
-				});
-			</script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+				$(".side-nav .collapse")
+						.on(
+								"hide.bs.collapse",
+								function() {
+									$(this).prev().find(".fa").eq(1)
+											.removeClass("fa-angle-right")
+											.addClass("fa-angle-down");
+								});
+				$('.side-nav .collapse')
+						.on(
+								"show.bs.collapse",
+								function() {
+									$(this).prev().find(".fa").eq(1)
+											.removeClass("fa-angle-down")
+											.addClass("fa-angle-right");
+								});
+			})
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("active");
+			});
+		</script>
 </body>
 </html>
