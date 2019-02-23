@@ -195,14 +195,15 @@
 	left: auto !important;
 	right: 0px;
 }
-
-.tab-content {
-	padding: 30px;
-}
-
 .row>a {
 	margin: 12px;
 }
+.tab-content .row {
+	padding: 11px;
+}
+.col-md-5 .tab-content {
+	padding : 15px;
+} 
 </style>
 <body>
 	<div id="wrapper">
@@ -286,6 +287,10 @@
 									Picture <img
 										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2j_EADnakDOXR0E0mq8PH46rdzs2JKCGYqDiu0RFp9oDzgtTx"
 										alt="Basic info">
+										<h3>Basic Info</h3>
+										<h5>Email</h5>
+										<h5>Username <div style="float: right">Admin</div></h5>
+										<button type="submit" class="btn btn-primary center-block">Edit Profile</button>
 								</div>
 							</div>
 						</div>
