@@ -201,6 +201,9 @@ option {
 #img-upload {
 	width: 100%;
 }
+.text-center>button {
+ margin : 8px;
+}
 </style>
 <body>
 	<div id="wrapper">
@@ -423,6 +426,10 @@ option {
 									</div>
 								</div>
 							</div>
+							<div class="text-center">
+								<button class="btn btn-primary" type="submit">Submit</button>
+								<button class="btn btn-primary" type="submit">Reset data</button>
+							</div>
 						</div>
 						<div class="col-md-4" style="float: right">
 							<div class="panel panel-heading">
@@ -440,17 +447,18 @@ option {
 													<input type="button" class="btn btn-default btn-sm"
 														value="Change Photo" onclick="uploadPhoto();">
 												</div>
-											</div>
-											<!-- col-md-12 -->
-										</div>
-										<!-- row -->
+											</div><!-- col-md-12 -->
+										</div><!-- row -->
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
-													<label>Upload Image</label>
+													<p>Acceptable image formats are jpg, jpeg, png & gif.
+														Maximum image size allowed is 2MB.</p>
+
 													<div class="input-group">
+
 														<span class="input-group-btn"> <span
-															class="btn btn-default btn-file"> Browse<input
+															class="btn btn-default btn-file"> Click here<input
 																type="file" id="imgInp">
 														</span>
 														</span> <input type="text" class="form-control" readonly>
@@ -460,42 +468,35 @@ option {
 											</div>
 										</div>
 										<script type="text/javascript">
-$(document).ready( function() {
-	$(document).on('change', '.btn-file :file', function() {
-	var input = $(this),
-		label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-	input.trigger('fileselect', [label]);
-	});
-
-	$('.btn-file :file').on('fileselect', function(event, label) {
-	    
-	    var input = $(this).parents('.input-group').find(':text'),
-	        log = label;
-	    
-	    if( input.length ) {
-	        input.val(log);
-	    } else {
-	        if( log ) alert(log);
-	    }
-    
-	});
-	function readURL(input) {
-	    if (input.files && input.files[0]) {
-	        var reader = new FileReader();
-	        
-	        reader.onload = function (e) {
-	            $('#img-upload').attr('src', e.target.result);
-	        }
-	        
-	        reader.readAsDataURL(input.files[0]);
-	    }
-	}
-
-	$("#imgInp").change(function(){
-	    readURL(this);
-	}); 	
-});
-</script>
+											$(document).ready( function() {
+												$(document).on('change', '.btn-file :file', function() {
+												var input = $(this),
+													label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+												input.trigger('fileselect', [label]);
+												});
+												$('.btn-file :file').on('fileselect', function(event, label) {
+												    var input = $(this).parents('.input-group').find(':text'),
+												        log = label;
+												    if( input.length ) {
+												        input.val(log);
+												    } else {
+												        if( log ) alert(log);
+												    }
+												});
+												function readURL(input) {
+												    if (input.files && input.files[0]) {
+												        var reader = new FileReader();
+													        reader.onload = function (e) {
+												            $('#img-upload').attr('src', e.target.result);
+												        }
+												        reader.readAsDataURL(input.files[0]);
+												    }
+												}
+												$("#imgInp").change(function(){
+												    readURL(this);
+												}); 	
+											});
+									</script>
 									</div>
 									<!-- id=pic  -->
 								</div>
@@ -508,10 +509,8 @@ $(document).ready( function() {
 				<!-- /#page-wrapper -->
 			</div>
 		</div>
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<script>
 			$(function() {
 				$('[data-toggle="tooltip"]').tooltip();

@@ -290,6 +290,9 @@
 										<h3>Basic Info</h3>
 										<h5>Email</h5>
 										<h5>Username<div style="float: right;">Admin</div></h5>
+										<div class="text-center">
+											<button class="btn btn-primary" type="submit">Edit Profile</button>
+										</div>
 								</div>
 							</div>
 						</div>
