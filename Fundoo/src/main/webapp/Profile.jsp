@@ -253,7 +253,7 @@
 								name="person"></ion-icon> User </a>
 						<ul id="submenu-1" class="collapse">
 							<li><a href="Register.jsp"></i>New user</a></li>
-							<li><a href="UsersList"></i> User List</a></li>
+							<li><a href="UsersList.jsp"></i> User List</a></li>
 						</ul></li>
 					<li><a href="Profile.jsp" style="color: white"><ion-icon
 								name="list-box"></ion-icon>Profile</a></li>
@@ -291,7 +291,7 @@
 										<h5>Email</h5>
 										<h5>Username<div style="float: right;">Admin</div></h5>
 										<div class="text-center">
-											<button class="btn btn-primary" type="submit">Edit Profile</button>
+											<button class="btn btn-primary" type="submit" onclick="window.location='Register.jsp'">Edit Profile</button>
 										</div>
 								</div>
 							</div>

@@ -201,8 +201,14 @@ option {
 #img-upload {
 	width: 100%;
 }
+
 .text-center>button {
- margin : 8px;
+	margin: 8px;
+	padding: 10px;
+}
+
+.btn btn-primary {
+	align-content: center;
 }
 </style>
 <body>
@@ -281,155 +287,165 @@ option {
 
 					<div class="row">
 						<div class="col-md-3">
-							<div class="well">
-								<h4>General</h4>
-								<div class="row">
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-
-											<lable name="userName" class="control-lable">First
-											Name</lable>
-											<input type="text" name="userName" class="form-control"
-												tabindex="11">
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable name="userName" class="control-lable">Middle
-											Name</lable>
-											<input type="text" name="middleName" class="form-control"
-												tabindex="12">
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable name="userName" class="control-lable">Last
-											Name</lable>
-											<input type="text" name="lastName" class="form-control"
-												tabindex="13">
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Date Of Birth</lable>
-											<div class="input-group date" id="dob">
-												<input type="text" id="dateOfBirth" class="form-control"
-													data-bv-date="true" data-bv-date-format="MM/DD/YYYY"
-													data-bv-date-message="Invalid date of birth"> <span
-													class="input-group-addon"><ion-icon name="calendar"></ion-icon>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Gender</lable>
-											<select name="gender" tabindex="" class="form-control"
-												style="width: 100%"
-												class="select-basic select2-hidden-accessible"
-												data-bv-nonempty="empty"">
-												<option value>--Select--</option>
-												<option value>Female</option>
-												<option value>Male</option>
-											</select> <span class="selection"></span> <span
-												class="dropdown-wrapper" aria-hidden="true"></span>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Country</lable>
-											<select name="gender" tabindex="" class="form-control"
-												style="width: 100%"
-												class="select-basic select2-hidden-accessible"
-												data-bv-nonempty="empty"">
-												<option value>--Select--</option>
-												<option value>India</option>
-												<option value>America</option>
-												<option value>London</option>
-												<option value>Japan</option>
-												<option value>Germany</option>
-												<option value>Egypt</option>
-												<option value>Paris</option>
-											</select> <span class="selection"></span> <span
-												class="dropdown-wrapper" aria-hidden="true"></span>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Phone</lable>
-											<input type="text" name="phone" class="form-control"
-												tabindex="2">
-											<div class="container row">(999)999-9999</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Phone + Ext</lable>
-											<input type="text" name="phoneExt" class="form-control"
-												tabindex="2">
-											<div class="container row">(999)999-9999-99</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Email</lable>
-											<input type="text" name="email" class="form-control"
-												tabindex="9">
-										</div>
-									</div>
-									<div class="col-md-5 col-sm-6 col-xs-12">
-										<div class="form-group">
-											<lable class="control-lable">Address</lable>
-											<textarea name="address" rows="5" cols="10" tabindex="10"
-												class="form-control">
-											</textarea>
-										</div>
-									</div>
+							<form action="#" method="post" id="form">
+								<div class="well">
+									<h4>General</h4>
+									
 									<div class="row">
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<lable name="userName" class="control-lable">Username</lable>
+												<lable name="userName" class="control-lable">First
+												Name</lable>
 												<input type="text" name="userName" class="form-control"
 													tabindex="11">
 											</div>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<lable name="userName" class="control-lable">Password</lable>
-												<input type="password" name="userName" class="form-control"
+												<lable name="userName" class="control-lable">Middle
+												Name</lable>
+												<input type="text" name="middleName" class="form-control"
 													tabindex="12">
 											</div>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<lable name="userName" class="control-lable">Confirm
-												Password</lable>
-												<input type="password" name="userName" class="form-control"
+												<lable name="userName" class="control-lable">Last
+												Name</lable>
+												<input type="text" name="lastName" class="form-control"
 													tabindex="13">
 											</div>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<lable name="userName" class="control-lable">User
-												Role</lable>
+												<lable class="control-lable">Date Of Birth</lable>
+												<div class="input-group date" id="dob">
+													<input type="text" id="dateOfBirth" class="form-control"
+														data-bv-date="true" data-bv-date-format="MM/DD/YYYY"
+														data-bv-date-message="Invalid date of birth"> <span
+														class="input-group-addon"><ion-icon name="calendar"></ion-icon>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Gender</lable>
 												<select name="gender" tabindex="" class="form-control"
 													style="width: 100%"
 													class="select-basic select2-hidden-accessible"
 													data-bv-nonempty="empty"">
 													<option value>--Select--</option>
-													<option value>Admin</option>
-													<option value>User</option>
+													<option value>Female</option>
+													<option value>Male</option>
 												</select> <span class="selection"></span> <span
 													class="dropdown-wrapper" aria-hidden="true"></span>
 											</div>
 										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Country</lable>
+												<select name="gender" tabindex="" class="form-control"
+													style="width: 100%"
+													class="select-basic select2-hidden-accessible"
+													data-bv-nonempty="empty"">
+													<option value>--Select--</option>
+													<option value>India</option>
+													<option value>America</option>
+													<option value>London</option>
+													<option value>Japan</option>
+													<option value>Germany</option>
+													<option value>Egypt</option>
+													<option value>Paris</option>
+												</select> <span class="selection"></span> <span
+													class="dropdown-wrapper" aria-hidden="true"></span>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Phone</lable>
+												<input type="text" name="phone" class="form-control"
+													tabindex="2">
+												<div class="container row">(999)999-9999</div>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Phone + Ext</lable>
+												<input type="text" name="phoneExt" class="form-control"
+													tabindex="2">
+												<div class="container row">(999)999-9999-99</div>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Email</lable>
+												<input type="text" name="email" class="form-control"
+													tabindex="9">
+											</div>
+										</div>
+										<div class="col-md-5 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<lable class="control-lable">Address</lable>
+												<textarea name="address" rows="5" cols="10" tabindex="10"
+													class="form-control">
+												</textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<lable name="userName" class="control-lable">Username</lable>
+													<input type="text" name="userName" class="form-control"
+														tabindex="11">
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<lable name="userName" class="control-lable">Password</lable>
+													<input type="password" name="userName" class="form-control"
+														tabindex="12">
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<lable name="userName" class="control-lable">Confirm
+													Password</lable>
+													<input type="password" name="userName" class="form-control"
+														tabindex="13">
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-6 col-xs-12">
+												<div class="form-group">
+													<lable name="userName" class="control-lable">User
+													Role</lable>
+													<select name="gender" tabindex="" class="form-control"
+														style="width: 100%"
+														class="select-basic select2-hidden-accessible"
+														data-bv-nonempty="empty"">
+														<option value>--Select--</option>
+														<option value>Admin</option>
+														<option value>User</option>
+													</select> <span class="selection"></span> <span
+														class="dropdown-wrapper" aria-hidden="true"></span>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="text-center">
+							</form>
+							<div class="row text-center">
 								<button class="btn btn-primary" type="submit">Submit</button>
-								<button class="btn btn-primary" type="submit">Reset data</button>
+								<button id="btn" class="btn btn-primary" type="submit">Reset</button>
 							</div>
+							<script>
+								$(document).ready(function() {
+									$("#btn").click(function() {
+										/* Single line Reset function executes on click of Reset Button */
+										$("#form")[0].reset();
+									});
+								});
+							</script>
 						</div>
 						<div class="col-md-4" style="float: right">
 							<div class="panel panel-heading">
@@ -447,8 +463,10 @@ option {
 													<input type="button" class="btn btn-default btn-sm"
 														value="Change Photo" onclick="uploadPhoto();">
 												</div>
-											</div><!-- col-md-12 -->
-										</div><!-- row -->
+											</div>
+											<!-- col-md-12 -->
+										</div>
+										<!-- row -->
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
@@ -468,35 +486,72 @@ option {
 											</div>
 										</div>
 										<script type="text/javascript">
-											$(document).ready( function() {
-												$(document).on('change', '.btn-file :file', function() {
-												var input = $(this),
-													label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-												input.trigger('fileselect', [label]);
-												});
-												$('.btn-file :file').on('fileselect', function(event, label) {
-												    var input = $(this).parents('.input-group').find(':text'),
-												        log = label;
-												    if( input.length ) {
-												        input.val(log);
-												    } else {
-												        if( log ) alert(log);
-												    }
-												});
-												function readURL(input) {
-												    if (input.files && input.files[0]) {
-												        var reader = new FileReader();
-													        reader.onload = function (e) {
-												            $('#img-upload').attr('src', e.target.result);
-												        }
-												        reader.readAsDataURL(input.files[0]);
-												    }
-												}
-												$("#imgInp").change(function(){
-												    readURL(this);
-												}); 	
-											});
-									</script>
+											$(document)
+													.ready(
+															function() {
+																$(document)
+																		.on(
+																				'change',
+																				'.btn-file :file',
+																				function() {
+																					var input = $(this), label = input
+																							.val()
+																							.replace(
+																									/\\/g,
+																									'/')
+																							.replace(
+																									/.*\//,
+																									'');
+																					input
+																							.trigger(
+																									'fileselect',
+																									[ label ]);
+																				});
+																$(
+																		'.btn-file :file')
+																		.on(
+																				'fileselect',
+																				function(
+																						event,
+																						label) {
+																					var input = $(
+																							this)
+																							.parents(
+																									'.input-group')
+																							.find(
+																									':text'), log = label;
+																					if (input.length) {
+																						input
+																								.val(log);
+																					} else {
+																						if (log)
+																							alert(log);
+																					}
+																				});
+																function readURL(
+																		input) {
+																	if (input.files
+																			&& input.files[0]) {
+																		var reader = new FileReader();
+																		reader.onload = function(
+																				e) {
+																			$(
+																					'#img-upload')
+																					.attr(
+																							'src',
+																							e.target.result);
+																		}
+																		reader
+																				.readAsDataURL(input.files[0]);
+																	}
+																}
+																$("#imgInp")
+																		.change(
+																				function() {
+																					readURL(this);
+																				});
+															});
+										</script>
 									</div>
 									<!-- id=pic  -->
 								</div>
@@ -509,8 +564,10 @@ option {
 				<!-- /#page-wrapper -->
 			</div>
 		</div>
-		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<script>
 			$(function() {
 				$('[data-toggle="tooltip"]').tooltip();

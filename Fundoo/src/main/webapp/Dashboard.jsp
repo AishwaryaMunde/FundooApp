@@ -217,8 +217,9 @@ float: right;
 						<div class="well"
 							style="padding-top: 80px; background-color: white">
 							<p style="text-align: left;">
-								Welcome Admin <span style="float: right;"> <a
-									href=""><ion-icon name="home"></ion-icon>Home</a> / Dashboard</span>
+								Welcome Admin 
+								<span style="float: right;">
+								<a href=""><ion-icon name="home"></ion-icon>Home</a> / Dashboard</span>
 							</p>
 						</div>
 					</div>
