@@ -21,6 +21,10 @@ public class UserServiceImpl implements IUserService{
 	public String create(Userdata user) {
 		System.out.println("in service "+user);
 		String status = dao.createUser(user);
+		String emailId = user.getEmailId();
+		String password = user.getPassword();
+		String userName = user.getUserName();
+		Utility.userData(emailId, userName, password);
 		System.out.println(status);
 		return status;
 	}
