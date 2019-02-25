@@ -472,7 +472,8 @@ option {
 												<div class="form-group">
 													<lable name="userPassword" class="control-lable">Password</lable>
 													<input id="userPassword" type="password" name="userPassword" class="form-control"
-														tabindex="12">
+														tabindex="12" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})" 
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required >
 												</div>
 											</div>
 											<div class="col-md-4 col-sm-6 col-xs-12">
