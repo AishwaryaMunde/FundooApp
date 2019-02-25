@@ -5,15 +5,82 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="Dashboard.css">
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
-
+<script>
+$(document).ready(function() {
+								$("#form").submit(function(event) {
+									event.preventDefault();
+									ajaxPost();
+								});
+								function ajaxPost() {
+									// PREPARE FORM DATA
+									var formData = {
+										firstName : $("#firstName").val(),
+										middleName : $("#middleName").val(),
+										lastName : $("#lastName").val(),
+										dateOfBirth : $("#dateOfBirth").val(),
+										gender : $("#gender").val(),
+										country : $("#country").val(),
+										phone : $("#phone").val(),
+										phoneExt : $("#phoneExt").val(),
+										emailId : $("#emailId").val(),
+										address : $("#address").val(),
+										userName : $("#userName").val(),
+										password : $("#userPassword").val(),
+										role :  $("#role").val()
+									}
+									console.log(formData.firstName,formData.middleName,formData.lastName,
+											formData.dateOfBirth,formData.gender,formData.country,formData.phone,
+											formData.phoneExt,formData.emailId,formData.address,formData.userName,
+											formData.userPassword,formData.role);
+									$.ajax({
+												type : "POST",
+												contentType : "application/json",
+												url : "http://localhost:8080/Fundoo/create",
+												data : JSON.stringify(formData),
+												dataType : 'json',
+												beforeSend : function(xhr) {
+													xhr.setRequestHeader(
+															"Accept",
+															"application/json");
+													xhr.setRequestHeader(
+															"Content-Type",
+															"application/json");
+												},
+												success : function(result) {
+													console.log(result.status);
+													if (result.status == "created" ) {
+														console.log('hello');
+														/* location.href = "Dashboard.jsp"; */
+													} else {
+														console.log('error')
+														alert('invalid username and password')
+													}
+													console.log(result);
+												}
+											});
+									resetData();
+								}
+								function resetData() {
+									$("#firstName").val(""),
+									$("#middleName").val(""),
+									$("#lastName").val(""),
+									$("#dateOfBirth").val(""),
+									$("#gender").val(""),
+									$("#country").val(""),
+									$("#phone").val(""),
+									$("#phoneExt").val(""),
+									$("#emailId").val(""),
+									$("#address").val(""),
+									$("#userName").val(""),
+									$("#userPassword").val(""),
+									$("#role").val("")
+								}
+							})
+		</script>  
 </head>
 <style>
 .top-nav {
@@ -226,8 +293,7 @@ option {
 					<div class="navbar-brand">
 						<a id="menu-toggle" class="active">
 							<p>
-								User Management <span
-									class="glyphicon glyphicon-align-justify btn-menu toggle"></span>
+								User Management <span class="glyphicon glyphicon-align-justify btn-menu toggle"></span>
 							</p>
 						</a>
 					</div>
@@ -284,35 +350,33 @@ option {
 							</p>
 						</div>
 					</div>
-
 					<div class="row">
 						<div class="col-md-3">
-							<form action="#" method="post" id="form">
+							<form id="form">
 								<div class="well">
-									<h4>General</h4>
-									
+									<h4>General</h4>									
 									<div class="row">
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
 												<lable name="userName" class="control-lable">First
 												Name</lable>
-												<input type="text" name="userName" class="form-control"
+												<input id="firstName" type="text" name="userName" class="form-control"
 													tabindex="11">
 											</div>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<lable name="userName" class="control-lable">Middle
+												<lable name="middleName" class="control-lable">Middle
 												Name</lable>
-												<input type="text" name="middleName" class="form-control"
+												<input id="middleName" type="text" name="middleName" class="form-control"
 													tabindex="12">
 											</div>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<lable name="userName" class="control-lable">Last
+												<lable name="lastName" class="control-lable">Last
 												Name</lable>
-												<input type="text" name="lastName" class="form-control"
+												<input id="lastName" type="text" name="lastName" class="form-control"
 													tabindex="13">
 											</div>
 										</div>
@@ -331,7 +395,7 @@ option {
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
 												<lable class="control-lable">Gender</lable>
-												<select name="gender" tabindex="" class="form-control"
+												<select name="gender" id="gender" tabindex="" class="form-control"
 													style="width: 100%"
 													class="select-basic select2-hidden-accessible"
 													data-bv-nonempty="empty"">
@@ -345,10 +409,10 @@ option {
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
 												<lable class="control-lable">Country</lable>
-												<select name="gender" tabindex="" class="form-control"
+												<select name="country" id="country" tabindex="" class="form-control"
 													style="width: 100%"
 													class="select-basic select2-hidden-accessible"
-													data-bv-nonempty="empty"">
+													data-bv-nonempty="empty">
 													<option value>--Select--</option>
 													<option value>India</option>
 													<option value>America</option>
@@ -364,7 +428,7 @@ option {
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
 												<lable class="control-lable">Phone</lable>
-												<input type="text" name="phone" class="form-control"
+												<input id="phone" type="text" name="phone" class="form-control"
 													tabindex="2">
 												<div class="container row">(999)999-9999</div>
 											</div>
@@ -372,7 +436,7 @@ option {
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
 												<lable class="control-lable">Phone + Ext</lable>
-												<input type="text" name="phoneExt" class="form-control"
+												<input id="phoneExt" type="text" name="phoneExt" class="form-control"
 													tabindex="2">
 												<div class="container row">(999)999-9999-99</div>
 											</div>
@@ -380,14 +444,14 @@ option {
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
 												<lable class="control-lable">Email</lable>
-												<input type="text" name="email" class="form-control"
+												<input id="emailId" type="email" name="email" class="form-control"
 													tabindex="9">
 											</div>
 										</div>
 										<div class="col-md-5 col-sm-6 col-xs-12">
 											<div class="form-group">
 												<lable class="control-lable">Address</lable>
-												<textarea name="address" rows="5" cols="10" tabindex="10"
+												<textarea id="address" name="address" rows="5" cols="10" tabindex="10"
 													class="form-control">
 												</textarea>
 											</div>
@@ -396,14 +460,14 @@ option {
 											<div class="col-md-4 col-sm-6 col-xs-12">
 												<div class="form-group">
 													<lable name="userName" class="control-lable">Username</lable>
-													<input type="text" name="userName" class="form-control"
+													<input id="userName" type="text" name="userName" class="form-control"
 														tabindex="11">
 												</div>
 											</div>
 											<div class="col-md-4 col-sm-6 col-xs-12">
 												<div class="form-group">
-													<lable name="userName" class="control-lable">Password</lable>
-													<input type="password" name="userName" class="form-control"
+													<lable name="userPassword" class="control-lable">Password</lable>
+													<input id="userPassword" type="password" name="userPassword" class="form-control"
 														tabindex="12">
 												</div>
 											</div>
@@ -417,27 +481,28 @@ option {
 											</div>
 											<div class="col-md-4 col-sm-6 col-xs-12">
 												<div class="form-group">
-													<lable name="userName" class="control-lable">User
+													<lable name="role" class="control-lable">User
 													Role</lable>
-													<select name="gender" tabindex="" class="form-control"
+													<select name="userRole" id="role" tabindex="" class="form-control"
 														style="width: 100%"
 														class="select-basic select2-hidden-accessible"
 														data-bv-nonempty="empty"">
 														<option value>--Select--</option>
 														<option value>Admin</option>
 														<option value>User</option>
-													</select> <span class="selection"></span> <span
-														class="dropdown-wrapper" aria-hidden="true"></span>
+													</select>
+													<span class="selection"></span> 
+													<span class="dropdown-wrapper" aria-hidden="true"></span>
 												</div>
 											</div>
 										</div>
 									</div>
+								</div>							
+								<div class="row text-center">
+									<button class="btn btn-primary" type="submit">Submit</button>
+									<button id="btn" class="btn btn-primary" type="submit">Reset</button>
 								</div>
 							</form>
-							<div class="row text-center">
-								<button class="btn btn-primary" type="submit">Submit</button>
-								<button id="btn" class="btn btn-primary" type="submit">Reset</button>
-							</div>
 							<script>
 								$(document).ready(function() {
 									$("#btn").click(function() {

@@ -30,8 +30,8 @@ public class UserController {
 	public ResponseEntity<?> create(@RequestBody Userdata user)
 	{
 		System.out.println("in controller "+user.toString());
-		service.create(user);
-		return new ResponseEntity<Userdata>(user,HttpStatus.OK);
+		String status = service.create(user);
+		return new ResponseEntity<String>(status,HttpStatus.OK);
 	}
 	
 	@PostMapping("/verifyUser")

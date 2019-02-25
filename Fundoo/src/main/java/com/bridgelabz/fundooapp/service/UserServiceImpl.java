@@ -18,10 +18,11 @@ public class UserServiceImpl implements IUserService{
 	UserDaoImpl dao;
 	@Autowired
 	Utility utility;
-	public Userdata create(Userdata user) {
+	public String create(Userdata user) {
 		System.out.println("in service "+user);
-		dao.createUser(user);
-		return user;
+		String status = dao.createUser(user);
+		System.out.println(status);
+		return status;
 	}
 
 	public String read(UserLogin user) {

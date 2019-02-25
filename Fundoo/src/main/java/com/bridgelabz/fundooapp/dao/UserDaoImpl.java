@@ -22,15 +22,15 @@ public class UserDaoImpl implements IUserdao {
 	Session session = factory.openSession(); //open session method give the obj of session
 	Transaction transaction = session.beginTransaction();
 	
-	public Userdata createUser(Userdata user) {
+	public String createUser(Userdata user) {
 		System.out.println("in dao "+user);
 		System.out.println(factory);
 		session.save(user);
     	System.out.println("Registered Suceessfully");
     	transaction.commit();
-    	session.close();
-    	factory.close();
-    	return user;
+//    	session.close();
+//    	factory.close();
+    	return "created";
 	}
 
 	public boolean readUser(String userName, String password) {
