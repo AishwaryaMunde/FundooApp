@@ -28,8 +28,8 @@ public class UserDaoImpl implements IUserdao {
 		session.save(user);
     	System.out.println("Registered Suceessfully");
     	transaction.commit();
-//    	session.close();
-//    	factory.close();
+    	session.close();
+    	factory.close();
     	return "created";
 	}
 
@@ -48,8 +48,8 @@ public class UserDaoImpl implements IUserdao {
     	else
     		return userFound=false;
     	transaction.commit();
-//    	session.close();
-//    	factory.close();
+    	session.close();
+    	factory.close();
 		return userFound;
 	}
 
@@ -60,8 +60,8 @@ public class UserDaoImpl implements IUserdao {
 		String user = (String)query.uniqueResult();
 		System.out.println(user);
     	transaction.commit();
-//    	session.close();
-//    	factory.close();
+    	session.close();
+    	factory.close();
 		return user;				
 	}
 

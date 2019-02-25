@@ -331,7 +331,6 @@ option {
 					<li><a href="index.jsp" style="color: white"><ion-icon
 								name="power"></ion-icon>Logout</a></li>
 				</ul>
-
 				<!-- /.navbar-collapse -->
 			</nav>
 		</div>
@@ -344,8 +343,7 @@ option {
 							style="padding-top: 80px; background-color: white">
 							<p style="text-align: left;">
 								New User <span style="float: right;"> <a
-									href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a>
-									/ Dashboard
+									href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a>/ Dashboard
 								</span>
 							</p>
 						</div>
@@ -399,12 +397,18 @@ option {
 													style="width: 100%"
 													class="select-basic select2-hidden-accessible"
 													data-bv-nonempty="empty"">
-													<option value>--Select--</option>
-													<option value>Female</option>
-													<option value>Male</option>
+													<option value="--Select--">--Select--</option>
+													<option value="Female">Female</option>
+													<option value="Male">Male</option>
 												</select> <span class="selection"></span> <span
 													class="dropdown-wrapper" aria-hidden="true"></span>
 											</div>
+											<!-- <script type="text/javascript">
+												$('#gender').on('click',function() {
+												  //alert($(this).val());
+												  console.log($(this).val());
+												});
+											</script> -->
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
@@ -413,14 +417,14 @@ option {
 													style="width: 100%"
 													class="select-basic select2-hidden-accessible"
 													data-bv-nonempty="empty">
-													<option value>--Select--</option>
-													<option value>India</option>
-													<option value>America</option>
-													<option value>London</option>
-													<option value>Japan</option>
-													<option value>Germany</option>
-													<option value>Egypt</option>
-													<option value>Paris</option>
+													<option value="--Select--">--Select--</option>
+													<option value="India">India</option>
+													<option value="America">America</option>
+													<option value="">London</option>
+													<option value="Japan">Japan</option>
+													<option value="Germany">Germany</option>
+													<option value="Egypt">Egypt</option>
+													<option value="Paris">Paris</option>
 												</select> <span class="selection"></span> <span
 													class="dropdown-wrapper" aria-hidden="true"></span>
 											</div>
@@ -487,9 +491,9 @@ option {
 														style="width: 100%"
 														class="select-basic select2-hidden-accessible"
 														data-bv-nonempty="empty"">
-														<option value>--Select--</option>
-														<option value>Admin</option>
-														<option value>User</option>
+														<option value="--Select--">--Select--</option>
+														<option value="Admin">Admin</option>
+														<option value="User">User</option>
 													</select>
 													<span class="selection"></span> 
 													<span class="dropdown-wrapper" aria-hidden="true"></span>

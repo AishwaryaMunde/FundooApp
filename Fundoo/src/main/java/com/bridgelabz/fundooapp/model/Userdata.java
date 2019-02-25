@@ -41,8 +41,8 @@ public class Userdata {
 	private String userName;
 	@Column(name="Password")
 	private String password;
-	@Column(name="Status")
-	private String status;
+//	@Column(name="Status")
+//	private String status;
 	@Column(name="Role")
 	private String role;
 	
@@ -66,7 +66,7 @@ public class Userdata {
 		this.address = address;
 		this.userName = userName;
 		this.password = password;
-		this.status = status;
+		//this.status = status;
 	}
 	public int getId() {
 		return id;
@@ -146,12 +146,12 @@ public class Userdata {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+//	public String getStatus() {
+//		return status;
+//	}
+//	public void setStatus(String status) {
+//		this.status = status;
+//	}
 	public String getRole() {
 		return role;
 	}
@@ -165,6 +165,6 @@ public class Userdata {
 		return "Userdata [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
 				+ lastName + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", country=" + country + ", phone="
 				+ phone + ", phoneExt=" + phoneExt + ", emailId=" + emailId + ", address=" + address + ", userName="
-				+ userName + ", password=" + password + ", status=" + status + ", role=" + role + "]";
+				+ userName + ", password=" + password + ", status=, role=" + role + "]";
 	}
 }
