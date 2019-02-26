@@ -188,18 +188,19 @@ tr>td>img {
 	height: 15px;
 	width: 15px;
 }
-.container>table {
-	padding: 50px;
+.well>table {
+	padding: 10px;
+	margin : 10px;
 }
-.well>button{
+/* .well>button{
 	float: right;
 }
 .well .form-control {
 	float: right;
-	height : 30px;
+	height : 35px;
 	width: 200px;
 	margin : 13px;
-}
+} */
 </style>
 <body>
 	<div id="wrapper">
@@ -222,17 +223,20 @@ tr>td>img {
 							</p>
 						</a>
 					</div>
-					<ul class="nav navbar-nav navbar-right ml-auto">
+					<ul class="nav navbar-nav navbar-right ml-auto" style="float: right;">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"> <span style="float: right;">Admin
+							data-toggle="dropdown"> 
+							<span>Admin
 							</span><b class="fa fa-angle-down"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="Profile.jsp"><ion-icon name="person"></ion-icon>
 										Profile</a></li>
 								<li class="divider"></li>
 								<li><a href="index.jsp"><ion-icon name="power"></ion-icon>
-										Logout</a></li>
-							</ul></li>
+										Logout</a>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -256,8 +260,6 @@ tr>td>img {
 					<li><a href="index.jsp" style="color: white"><ion-icon
 								name="power"></ion-icon>Logout</a></li>
 				</ul>
-
-				<!-- /.navbar-collapse -->
 			</nav>
 		</div>
 
@@ -277,20 +279,22 @@ tr>td>img {
 					</div>
 					<div class="container">
 						<div class="well">
-							<button class="btn btn-primary" type="submit" onclick="window.location='Register.jsp'">New User</button>						
-							<input class="form-control" id="myInput" type="text"
-								placeholder="Search.."> <br>
+							<!-- <div style="float: right;"> -->
+								<button class="btn btn-primary" type="submit" onclick="window.location='Register.jsp'" style="float: right;">New User</button>						
+								<input class="form-control" id="myInput" type="text"
+									placeholder="Search.." style="float: right; width: 250px;" > <br>
+							<!-- </div> -->
 							<table class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th></th>
-										<th>Name</th>
-										<th>Email</th>
-										<th>Dob</th>
-										<th>Status</th>
-										<th>Role</th>
-										<th>Account</th>
-										<th>Action</th>
+										<th data-field=""></th>
+										<th data-field="Name">Name</th>
+										<th data-field="Email">Email</th>
+										<th data-field="Dob">Dob</th>
+										<th data-field="Status">Status</th>
+										<th data-field="Role">Role</th>
+										<th data-field="Account">Account</th>
+										<th data-field="Action">Action</th>
 									</tr>
 								</thead>
 								<tbody id="myTable">
@@ -303,8 +307,8 @@ tr>td>img {
 										<td>Inactive</td>
 										<td>Admin</td>
 										<td></td>
-										<td><i class="glyphicon glyphicon-edit"></i>
-										<ion-icon name="trash"></ion-icon></td>
+										<td><button type="button" id="edit" style="background-color: white; border-radius: none"><i class="glyphicon glyphicon-edit"></i></button>
+										<button type="button" id="delete" style="background-color: white;"><ion-icon name="trash"></ion-icon></button></td>
 									</tr>
 									<tr>
 										<td><img
@@ -315,8 +319,8 @@ tr>td>img {
 										<td>online</td>
 										<td>Admin</td>
 										<td></td>
-										<td><i class="glyphicon glyphicon-edit"></i>
-										<ion-icon name="trash"></ion-icon></td>
+										<td><button type="button" id="edit" style="background-color: white; border-radius: none"><i class="glyphicon glyphicon-edit"></i></button>
+										<button type="button" id="delete" style="background-color: white;"><ion-icon name="trash"></ion-icon></button></td>
 									</tr>
 								</tbody>
 							</table>						
