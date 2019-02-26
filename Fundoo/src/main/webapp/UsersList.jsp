@@ -188,13 +188,17 @@ tr>td>img {
 	height: 15px;
 	width: 15px;
 }
-.container>input {
-	float: right;
-	width: 300px; 
-	margin : 9px;
-}
 .container>table {
 	padding: 50px;
+}
+.well>button{
+	float: right;
+}
+.well .form-control {
+	float: right;
+	height : 30px;
+	width: 200px;
+	margin : 13px;
 }
 </style>
 <body>
@@ -272,49 +276,52 @@ tr>td>img {
 						</div>
 					</div>
 					<div class="container">
-						<input class="form-control" id="myInput" type="text"
-							placeholder="Search.."> <br>
-						<table class="table table-bordered table-striped">
-							<thead>
-								<tr>
-									<th></th>
-									<th>Name</th>
-									<th>Email</th>
-									<th>Dob</th>
-									<th>Status</th>
-									<th>Role</th>
-									<th>Account</th>
-									<th>Action</th>
-								</tr>
-							</thead>
-							<tbody id="myTable">
-								<tr>
-									<td><img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
-									<td>Aishwarya Munde</td>
-									<td>kccaishwarya2012@gmail.com</td>
-									<td>14/10/1997</td>
-									<td>Inactive</td>
-									<td>Admin</td>
-									<td></td>
-									<td><i class="glyphicon glyphicon-edit"></i>
-									<ion-icon name="trash"></ion-icon></td>
-								</tr>
-								<tr>
-									<td><img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
-									<td>Akhil</td>
-									<td>akhil.akkineni@gmail.com</td>
-									<td>14/10/1990</td>
-									<td>online</td>
-									<td>Admin</td>
-									<td></td>
-									<td><i class="glyphicon glyphicon-edit"></i>
-									<ion-icon name="trash"></ion-icon></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+						<div class="well">
+							<button class="btn btn-primary" type="submit" onclick="window.location='Register.jsp'">New User</button>						
+							<input class="form-control" id="myInput" type="text"
+								placeholder="Search.."> <br>
+							<table class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th></th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Dob</th>
+										<th>Status</th>
+										<th>Role</th>
+										<th>Account</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody id="myTable">
+									<tr>
+										<td><img
+											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
+										<td>Aishwarya Munde</td>
+										<td>kccaishwarya2012@gmail.com</td>
+										<td>14/10/1997</td>
+										<td>Inactive</td>
+										<td>Admin</td>
+										<td></td>
+										<td><i class="glyphicon glyphicon-edit"></i>
+										<ion-icon name="trash"></ion-icon></td>
+									</tr>
+									<tr>
+										<td><img
+											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
+										<td>Akhil</td>
+										<td>akhil.akkineni@gmail.com</td>
+										<td>14/10/1990</td>
+										<td>online</td>
+										<td>Admin</td>
+										<td></td>
+										<td><i class="glyphicon glyphicon-edit"></i>
+										<ion-icon name="trash"></ion-icon></td>
+									</tr>
+								</tbody>
+							</table>						
+						</div>						
+					</div>					
 					<script>
 						$(document).ready(function(){
 						  $("#myInput").on("keyup", function() {
