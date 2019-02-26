@@ -252,8 +252,8 @@
 						data-target="#submenu-1" style="color: white"><ion-icon
 								name="person"></ion-icon> User </a>
 						<ul id="submenu-1" class="collapse">
-							<li><a href="Register.jsp"></i>New user</a></li>
-							<li><a href="UsersList.jsp"></i> User List</a></li>
+							<li><a href="Register.jsp">New user</a></li>
+							<li><a href="UsersList.jsp">User List</a></li>
 						</ul></li>
 					<li><a href="Profile.jsp" style="color: white"><ion-icon
 								name="list-box"></ion-icon>Profile</a></li>

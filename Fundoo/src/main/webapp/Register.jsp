@@ -359,7 +359,7 @@ option {
 												<lable name="userName" class="control-lable">First
 												Name</lable>
 												<input id="firstName" type="text" name="userName" class="form-control"
-													tabindex="11">
+													tabindex="11" required data-error-msg="First name is required">
 											</div>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
@@ -375,7 +375,7 @@ option {
 												<lable name="lastName" class="control-lable">Last
 												Name</lable>
 												<input id="lastName" type="text" name="lastName" class="form-control"
-													tabindex="13">
+													tabindex="13" required="required">
 											</div>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
@@ -396,7 +396,7 @@ option {
 												<select name="gender" id="gender" tabindex="" class="form-control"
 													style="width: 100%"
 													class="select-basic select2-hidden-accessible"
-													data-bv-nonempty="empty"">
+													data-bv-nonempty="empty" required="required">
 													<option value="--Select--">--Select--</option>
 													<option value="Female">Female</option>
 													<option value="Male">Male</option>
@@ -416,7 +416,7 @@ option {
 												<select name="country" id="country" tabindex="" class="form-control"
 													style="width: 100%"
 													class="select-basic select2-hidden-accessible"
-													data-bv-nonempty="empty">
+													data-bv-nonempty="empty" required="required">
 													<option value="--Select--">--Select--</option>
 													<option value="India">India</option>
 													<option value="America">America</option>
@@ -465,7 +465,7 @@ option {
 												<div class="form-group">
 													<lable name="userName" class="control-lable">Username</lable>
 													<input id="userName" type="text" name="userName" class="form-control"
-														tabindex="11">
+														tabindex="11" required="required">
 												</div>
 											</div>
 											<div class="col-md-4 col-sm-6 col-xs-12">
@@ -473,7 +473,8 @@ option {
 													<lable name="userPassword" class="control-lable">Password</lable>
 													<input id="userPassword" type="password" name="userPassword" class="form-control"
 														tabindex="12" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})" 
-					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required >
+														title="Must contain at least one number and one uppercase and lowercase letter, 
+														and at least 8 or more characters" required="required" >
 												</div>
 											</div>
 											<div class="col-md-4 col-sm-6 col-xs-12">
@@ -481,7 +482,7 @@ option {
 													<lable name="userName" class="control-lable">Confirm
 													Password</lable>
 													<input type="password" name="userName" class="form-control"
-														tabindex="13">
+														tabindex="13" required="required">
 												</div>
 											</div>
 											<div class="col-md-4 col-sm-6 col-xs-12">
@@ -491,7 +492,7 @@ option {
 													<select name="userRole" id="role" tabindex="" class="form-control"
 														style="width: 100%"
 														class="select-basic select2-hidden-accessible"
-														data-bv-nonempty="empty"">
+														data-bv-nonempty="empty" required="required">
 														<option value="--Select--">--Select--</option>
 														<option value="Admin">Admin</option>
 														<option value="User">User</option>

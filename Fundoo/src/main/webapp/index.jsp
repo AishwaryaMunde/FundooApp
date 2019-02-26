@@ -114,8 +114,8 @@
     		<img src="http://www.ittutorials.in/images/mi-logo.jpg">
     		<h6>Login to your account</h6>
     	
-	    	<input type="text" id="userName" class="form-control" placeholder="Username">
-	    	<input type="password" id="userPassword" class="form-control" placeholder="Password">
+	    	<input type="text" id="userName" class="form-control" placeholder="Username" required="required">
+	    	<input type="password" id="userPassword" class="form-control" placeholder="Password" required="required">
 	    	<button type="submit" class="btn btn-primary form-control" >LOGIN</button>
     	</form>
     	<span>

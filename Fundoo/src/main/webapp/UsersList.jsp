@@ -9,7 +9,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Dashboard.css">
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <style>
 .top-nav {
@@ -155,6 +156,39 @@
 	left: auto !important;
 	right: 0px;
 }
+
+h2 {
+	text-align: center;
+}
+
+table caption {
+	padding: .5em 0;
+}
+
+@media screen and (max-width: 767px) {
+	table caption {
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+.p {
+	text-align: center;
+	padding-top: 140px;
+	font-size: 14px;
+}
+
+i {
+	font-size: 20px;
+}
+
+ion-icon {
+	font-size: 20px;
+}
+
+tr>td>img {
+	height: 15px;
+	width: 15px;
+}
 </style>
 <body>
 	<div id="wrapper">
@@ -180,10 +214,9 @@
 					<ul class="nav navbar-nav navbar-right ml-auto">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"> <span style="float: right;">Admin
-									</span><b class="fa fa-angle-down"></b></a>
+							</span><b class="fa fa-angle-down"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="Profile.jsp"><ion-icon
-								name="person"></ion-icon>
+								<li><a href="Profile.jsp"><ion-icon name="person"></ion-icon>
 										Profile</a></li>
 								<li class="divider"></li>
 								<li><a href="index.jsp"><ion-icon name="power"></ion-icon>
@@ -198,7 +231,8 @@
 		<div id="side-wrapper" class="active">
 			<nav id="spy">
 				<ul class="side-nav nav">
-					<li><a href="Dashboard.jsp" style="color: white"><ion-icon name="cloudy"></ion-icon>Dashboard</a></li>
+					<li><a href="Dashboard.jsp" style="color: white"><ion-icon
+								name="cloudy"></ion-icon>Dashboard</a></li>
 					<li><a href="#" data-toggle="collapse"
 						data-target="#submenu-1" style="color: white"><ion-icon
 								name="person"></ion-icon> User </a>
@@ -206,7 +240,8 @@
 							<li><a href="Register.jsp"></i>New user</a></li>
 							<li><a href="UsersList"></i> User List</a></li>
 						</ul></li>
-					<li><a href="Profile.jsp" style="color: white"><ion-icon name="list-box"></ion-icon>Profile</a></li>
+					<li><a href="Profile.jsp" style="color: white"><ion-icon
+								name="list-box"></ion-icon>Profile</a></li>
 					<li><a href="index.jsp" style="color: white"><ion-icon
 								name="power"></ion-icon>Logout</a></li>
 				</ul>
@@ -222,27 +257,70 @@
 						<div class="well"
 							style="padding-top: 80px; background-color: white">
 							<p style="text-align: left;">
-								Users <span style="float: right;"> <a href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a> / Dashboard</span>
+								Users <span style="float: right;"> <a
+									href="Dashboard.jsp"><ion-icon name="home"></ion-icon>Home</a>
+									/ Dashboard
+								</span>
 							</p>
 						</div>
 					</div>
-					<div class=" container-fluid">
-						<div class="panel panel"></div>
+					<div class="container">
+						<input class="form-control" id="myInput" type="text"
+							placeholder="Search.."> <br>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Dob</th>
+									<th>Status</th>
+									<th>Role</th>
+									<th>Account</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody id="myTable">
+								<tr>
+									<td><img
+										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
+									<td>Aishwarya Munde</td>
+									<td>kccaishwarya2012@gmail.com</td>
+									<td>14/10/1997</td>
+									<td>Inactive</td>
+									<td>Admin</td>
+									<td></td>
+									<td><i class="glyphicon glyphicon-edit"></i>
+									<ion-icon name="trash"></ion-icon></td>
+								</tr>
+								<tr>
+									<td><img
+										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
+									<td>Akhil</td>
+									<td>akhil.akkineni@gmail.com</td>
+									<td>14/10/1990</td>
+									<td>online</td>
+									<td>Admin</td>
+									<td></td>
+									<td><i class="glyphicon glyphicon-edit"></i>
+									<ion-icon name="trash"></ion-icon></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<!-- <div class="row">
-						<div class="col-md-5">
-							<div class="well">Picture</div>
-						</div>
-						<div class="col-md-5">
-						style="background-color: burlywood"
-							<div class="well" >active
-								45</div>
-						</div>
-					</div> -->
+					<script>
+						$(document).ready(function(){
+						  $("#myInput").on("keyup", function() {
+						    var value = $(this).val().toLowerCase();
+						    $("#myTable tr").filter(function() {
+						      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+						    });
+						  });
+						});
+					</script>
 				</div>
 			</div>
 		</div>
-		<!-- /#page-wrapper -->
 	</div>
 
 	<script
