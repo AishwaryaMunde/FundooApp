@@ -9,6 +9,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
 <script>
 $(document).ready(function() {
 								$("#form").submit(function(event) {
@@ -474,9 +475,12 @@ option {
 													<input id="userPassword" type="password" name="userPassword" class="form-control"
 														tabindex="12" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})" 
 														title="Must contain at least one number and one uppercase and lowercase letter, 
-														and at least 8 or more characters" required="required" >
+														and at least 8 or more characters" required="required"data-toggle="password" >
 												</div>
 											</div>
+											<script type="text/javascript">
+												$("#userPassword").password('toggle');
+											</script>
 											<div class="col-md-4 col-sm-6 col-xs-12">
 												<div class="form-group">
 													<lable name="userName" class="control-lable">Confirm
