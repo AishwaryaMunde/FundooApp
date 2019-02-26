@@ -184,10 +184,17 @@ i {
 ion-icon {
 	font-size: 20px;
 }
-
 tr>td>img {
 	height: 15px;
 	width: 15px;
+}
+.container>input {
+	float: right;
+	width: 300px; 
+	margin : 9px;
+}
+.container>table {
+	padding: 50px;
 }
 </style>
 <body>
