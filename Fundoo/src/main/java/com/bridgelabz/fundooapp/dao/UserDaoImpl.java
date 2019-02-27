@@ -74,4 +74,12 @@ public class UserDaoImpl implements IUserdao {
     	transaction.commit();
 		return list;
 	}
+
+	public Userdata getUser(int id) {
+		Query query = session.createQuery("from Userdata where id=:id");
+		query.setParameter("id",id);
+		Userdata userdata = (Userdata) query.uniqueResult();
+		System.out.println(userdata);
+		return userdata;
+	}
 }

@@ -10,4 +10,5 @@ public interface IUserdao {
 	public int readUser(String emailId, String password);
 	public String getPassword(String emailId);
 	public List<Userdata> fetchAllUsers();
+	public Userdata getUser(int id);
 }

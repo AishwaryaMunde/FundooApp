@@ -38,7 +38,7 @@
 															"application/json");
 												},
 												success : function(result) {
-													console.log(result.status);
+													console.log(result);
 													if (result.status == id) {
 														console.log('hello');
 														location.href = "Dashboard.jsp";

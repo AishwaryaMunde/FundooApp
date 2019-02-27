@@ -15,5 +15,5 @@ public interface IUserService {
 
 	public List fetchAllUserData();
 
-	public Userdata getUserInfo();
+	public Userdata getUserInfo(int id);
 }

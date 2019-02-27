@@ -51,8 +51,8 @@ public class UserServiceImpl implements IUserService{
 		return list;
 	}
 
-	public Userdata getUserInfo() {
-		
-		return null;
+	public Userdata getUserInfo(int id) {
+		Userdata userData=dao.getUser(id) ;
+		return userData;
 	}
 }
