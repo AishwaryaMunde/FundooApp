@@ -35,14 +35,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/verifyUser")
-	public ResponseEntity<Response> read(@RequestBody UserLogin user)
+	public ResponseEntity<?> read(@RequestBody UserLogin user)
 	{
 		System.out.println(user.getUserName()+" "+user.getUserPassword());
-		String status = service.read(user);
-		System.out.println("Status is :"+status);
-		Response response = new Response();
-		response.setStatus(status);
-		return new ResponseEntity<Response>(response,HttpStatus.OK);
+		int id = service.read(user);
+		System.out.println("id is :"+id);
+		return new ResponseEntity<Integer>(id,HttpStatus.OK);
 	}
 	
 	@GetMapping("/getPassword")

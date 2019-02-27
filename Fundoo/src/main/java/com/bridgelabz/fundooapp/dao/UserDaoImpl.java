@@ -33,24 +33,23 @@ public class UserDaoImpl implements IUserdao {
     	return "created";
 	}
 
-	public boolean readUser(String userName, String password) {
-		boolean userFound=false;
-		Query query = session.createQuery("from Userdata where Username=:userName and Password=:password and Role=:admin");
+	public int readUser(String userName, String password) {
+		int id = 0;
+		Query query = session.createQuery("select id from Userdata where Username=:userName and Password=:password and Role=:admin");
     	query.setParameter("userName",userName);
     	query.setParameter("password",password);
     	query.setParameter("admin", "Admin");
-    	List list = query.list();
-    	if(list != null && list.size()>0)
-    	{
-    		System.out.println(list);
-    		userFound = true;
+    	List<Integer> obj = (List<Integer>)query.list();
+    	for(Integer array : obj) {
+    		System.out.println("query list : "+array);
+    		id = array;
+    		System.out.println(id);
     	}
-    	else
-    		return userFound=false;
+    	
     	transaction.commit();
     	session.close();
     	factory.close();
-		return userFound;
+		return id;
 	}
 
 	public String getPassword(String emailId) {

@@ -9,7 +9,7 @@ public interface IUserService {
 	
 	public String create(Userdata user);
 
-	public String read(UserLogin user);
+	public int read(UserLogin user);
 
 	public String forgetPassword(String emailId);
 

@@ -29,17 +29,12 @@ public class UserServiceImpl implements IUserService{
 		return status;
 	}
 
-	public String read(UserLogin user) {
+	public int read(UserLogin user) {
 		String userName=user.getUserName();
 		String password = user.getUserPassword();
-		if(dao.readUser(userName,password))
-		{
-			return "done";
-		}
-		else 
-		{
-			return "fail";
-		}
+		int id = dao.readUser(userName,password);
+		System.out.println("in service : "+id);
+		return id;		
 	}
 
 	public String forgetPassword(String emailId) {

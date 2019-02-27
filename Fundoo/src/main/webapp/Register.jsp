@@ -404,12 +404,6 @@ option {
 												</select> <span class="selection"></span> <span
 													class="dropdown-wrapper" aria-hidden="true"></span>
 											</div>
-											<!-- <script type="text/javascript">
-												$('#gender').on('click',function() {
-												  //alert($(this).val());
-												  console.log($(this).val());
-												});
-											</script> -->
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
@@ -628,17 +622,13 @@ option {
 																					});
 																});
 											</script>
-										</div>
-										<!-- id=pic  -->
-									</div>
-									<!--panel body  -->
-								</div>
-								<!-- panel panel-heading end -->
+										</div><!-- id=pic  -->
+									</div><!--panel body  -->
+								</div><!-- panel panel-heading end -->
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- /#page-wrapper -->
+				</div><!-- /#page-wrapper -->
 			</div>
 		</div>
 		<script
