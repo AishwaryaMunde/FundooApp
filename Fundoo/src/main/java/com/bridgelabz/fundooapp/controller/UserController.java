@@ -45,7 +45,12 @@ public class UserController {
 	public ResponseEntity<?> read(@RequestBody UserLogin user)
 	{
 		int id = service.read(user);
-		return new ResponseEntity<Integer>(id,HttpStatus.OK);
+		System.out.println("in cpontroller "+id);
+		Response response = new Response();
+		response.setStatus("done");
+		response.setId(id);		
+		System.out.println(response);
+		return new ResponseEntity<Response>(response,HttpStatus.OK);
 	}
 	
 	@GetMapping("/getPassword")

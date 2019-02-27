@@ -37,16 +37,19 @@
 															"Content-Type",
 															"application/json");
 												},
-												success : function(result) {
+												success : function(result) {													
 													console.log(result);
-													if (result.status == id) {
+													/* console.log(result[1].status); */
+													console.log(result.id);
+													/* localStorage.setItem("id", result.getId()); */
+													/* if (result.status == "done") {
 														console.log('hello');
 														location.href = "Dashboard.jsp";
 													} else {
 														console.log('error')
 														alert('invalid username and password')
 													}
-													console.log(result);
+													console.log(result); */
 												}
 											});
 									resetData();
