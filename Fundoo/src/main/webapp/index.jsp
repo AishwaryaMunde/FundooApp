@@ -39,7 +39,7 @@
 												},
 												success : function(result) {
 													console.log(result.status);
-													if (result.status == "done") {
+													if (result.status == id) {
 														console.log('hello');
 														location.href = "Dashboard.jsp";
 													} else {
@@ -114,7 +114,7 @@
     		<img src="http://www.ittutorials.in/images/mi-logo.jpg">
     		<h6>Login to your account</h6>
     	
-	    	<input type="text" id="userName" class="form-control" placeholder="Username" required="required">
+	    	<input type="text" id="userName" name="userName" class="form-control" placeholder="Username" required="required">
 	    	<input type="password" id="userPassword" class="form-control" placeholder="Password" required="required">
 	    	<button type="submit" class="btn btn-primary form-control" >LOGIN</button>
     	</form>
