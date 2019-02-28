@@ -20,8 +20,7 @@
 				dataType : 'json',
 				
 				success : function(result) {					
-					console.log(result);
-					
+					console.log(result);					
 					if(result.status="done")
 					{
 						console.log(result.firstName);
@@ -204,13 +203,6 @@
 } 
 </style>
 <body>
-<%
-		response.setHeader("Cache-Control","no-cache , no-store , must-revalidate");//for back button after logout	
-		if(session.getAttribute("userName")==null)
-		{
-			response.sendRedirect("index.jsp");
-		}	
-%>
 	<div id="wrapper">
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -239,7 +231,7 @@
 								<li><a href="Profile.jsp"><ion-icon name="person"></ion-icon>
 										Profile</a></li>
 								<li class="divider"></li>
-								<li><a href="index.jsp"><ion-icon name="power"></ion-icon>
+								<li><a href="logout.jsp"><ion-icon name="power"></ion-icon>
 										Logout</a></li>
 							</ul></li>
 					</ul>
@@ -262,7 +254,7 @@
 						</ul></li>
 					<li><a href="Profile.jsp" style="color: white"><ion-icon
 								name="list-box"></ion-icon>Profile</a></li>
-					<li><a href="index.jsp" style="color: white"><ion-icon
+					<li><a href="logout.jsp" style="color: white"><ion-icon
 								name="power"></ion-icon>Logout</a></li>
 				</ul>
 			</nav>
