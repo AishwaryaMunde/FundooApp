@@ -42,14 +42,13 @@ public class UserController {
 	}
 	
 	@PostMapping("/verifyUser")
-	public ResponseEntity<?> read(@RequestBody UserLogin user)
+	public ResponseEntity<Response> read(@RequestBody UserLogin user)
 	{
 		int id = service.read(user);
 		System.out.println("in cpontroller "+id);
 		Response response = new Response();
 		response.setStatus("done");
 		response.setId(id);		
-		System.out.println(response);
 		return new ResponseEntity<Response>(response,HttpStatus.OK);
 	}
 	

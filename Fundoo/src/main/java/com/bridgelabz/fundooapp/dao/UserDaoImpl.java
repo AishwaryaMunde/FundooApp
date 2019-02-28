@@ -43,7 +43,6 @@ public class UserDaoImpl implements IUserdao {
     	for(Integer array : obj) {
     		System.out.println("query list : "+array);
     		id = array;
-    		System.out.println(id);
     	}
     	
     	transaction.commit();
@@ -53,11 +52,9 @@ public class UserDaoImpl implements IUserdao {
 	}
 
 	public String getPassword(String emailId) {
-		System.out.println("in dao : "+emailId);
 		Query query = session.createQuery("select password from Userdata where Email_Id=:emailId");
 		query.setParameter("emailId",emailId);
 		String user = (String)query.uniqueResult();
-		System.out.println(user);
     	transaction.commit();
     	session.close();
     	factory.close();

@@ -38,18 +38,21 @@
 															"application/json");
 												},
 												success : function(result) {													
-													console.log(result);
-													/* console.log(result[1].status); */
-													console.log(result.id);
-													/* localStorage.setItem("id", result.getId()); */
-													/* if (result.status == "done") {
+													console.log("adfdf");
+													console.log(result.status);
+													 data = JSON.stringify(result);
+													newStatus = JSON.stringify(result.status);
+													console.log(result.status);
+													localStorage.setItem('id',result.id);
+													console.log("adfdf");
+													   if (result.status == "done") {
 														console.log('hello');
-														location.href = "Dashboard.jsp";
-													} else {
+														window.location.assign("http://localhost:8080/Fundoo/Dashboard.jsp");
+													}  else {
 														console.log('error')
-														alert('invalid username and password')
-													}
-													console.log(result); */
+														alert('invalid username and password') 
+													}  
+													console.log(result);  
 												}
 											});
 									resetData();

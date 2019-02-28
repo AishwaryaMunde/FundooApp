@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="Dashboard.css">
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -203,13 +202,13 @@ tr>td>img {
 } */
 </style>
 <body>
-<%
+<%-- <%
 		response.setHeader("Cache-Control","no-cache , no-store , must-revalidate");//for back button after logout	
 		if(session.getAttribute("userName")==null)
 		{
 			response.sendRedirect("index.jsp");
 		}	
-%>
+%> --%>
 	<div id="wrapper">
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -291,7 +290,7 @@ tr>td>img {
 								<input class="form-control" id="myInput" type="text"
 									placeholder="Search.." style="float: right; width: 250px;" > <br>
 							<!-- </div> -->
-							<table class="table table-bordered table-striped">
+							<table class="table table-bordered table-striped" id="tableData">
 								<thead>
 									<tr>
 										<th data-field=""></th>
@@ -320,7 +319,7 @@ tr>td>img {
 									<tr>
 										<td><img
 											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
-										<td>Akhil</td>
+										<td id="Akhil">Akhil</td>
 										<td>akhil.akkineni@gmail.com</td>
 										<td>14/10/1990</td>
 										<td>online</td>
@@ -330,7 +329,12 @@ tr>td>img {
 										<button type="button" id="delete" style="background-color: white;"><ion-icon name="trash"></ion-icon></button></td>
 									</tr>
 								</tbody>
-							</table>						
+							</table>	
+							<!-- <script type="text/javascript">
+							   $(document).ready(function(){
+								    $("#tableData").load("http://localhost:8080/Fundoo/fetchUsers" );
+								});
+							</script> -->		
 						</div>						
 					</div>					
 					<script>
