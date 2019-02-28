@@ -66,7 +66,6 @@
             console.log(result.status);
             if(result.status==emailId){                
                 console.log('hello');
-                /* location.href="Dashboard.jsp"; */
                 }
         	    else{
                 	console.log('error')

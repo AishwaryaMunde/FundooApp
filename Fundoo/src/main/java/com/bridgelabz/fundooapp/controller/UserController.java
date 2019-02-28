@@ -66,9 +66,10 @@ public class UserController {
 		return new ResponseEntity<List>(list,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/retrieveUser/{id}")
-	public ResponseEntity<?> getUserInfo(@PathVariable int id)
+	@RequestMapping(value="/retrieveUser/{id}",method=RequestMethod.GET)
+	public ResponseEntity<Userdata> getUserInfo(@PathVariable int id)
 	{
+		System.out.println(id);
 		Userdata userdata = service.getUserInfo(id);
 		return new ResponseEntity<Userdata>(userdata,HttpStatus.OK);
 	}

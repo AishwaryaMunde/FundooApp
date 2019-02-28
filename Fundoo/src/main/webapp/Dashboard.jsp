@@ -151,6 +151,7 @@ float: right;
       left: auto !important;
       right: 0px;
     }
+.ml-auto {align-content: right;}
 </style>
 <body>
 <%-- <%
@@ -174,7 +175,7 @@ float: right;
 					</button>
 					<div class="navbar-brand">
 						<a id="menu-toggle" class="active">
-							<p>User Management <span	class="glyphicon glyphicon-align-justify btn-menu toggle"></span></p>
+							<p>User Management <span class="glyphicon glyphicon-align-justify btn-menu toggle"></span></p>
 						</a>
 					</div>
 					<ul class="nav navbar-nav navbar-right ml-auto">
@@ -212,8 +213,6 @@ float: right;
 					<li><a
 						href="index.jsp" style="color: white"><ion-icon name="power"></ion-icon>Logout</a></li>
 				</ul>
-
-				<!-- /.navbar-collapse -->
 			</nav>
 		</div>
 

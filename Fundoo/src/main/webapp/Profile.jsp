@@ -4,46 +4,44 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 <script>
 	$(document).ready(function() {
-		$("#loginverify").submit(function(event) {
-			event.preventDefault();
-			ajaxPost();
-		});
-		function ajaxPost() {
-
+		var id = localStorage.getItem("id");
+		console.log(id);
+		
 			$.ajax({
-				type : "POST",
+				type : "GET",
 				contentType : "application/json",
-				url : "http://localhost:8080/Fundoo/verifyUser",
-				data : JSON.stringify(formData),
+				url : "http://localhost:8080/Fundoo/retrieveUser/"+id,
 				dataType : 'json',
-				beforeSend : function(xhr) {
-					xhr.setRequestHeader("Accept", "application/json");
-					xhr.setRequestHeader("Content-Type", "application/json");
-				},
-				success : function(result) {
-					console.log(result.status);
-					if (result.status == "done") {
-						console.log('hello');
-						location.href = "Dashboard.jsp";
-					} else {
-						console.log('error')
-						alert('invalid username and password')
-					}
+				
+				success : function(result) {					
 					console.log(result);
+					
+					if(result.status="done")
+					{
+						console.log(result.firstName);
+						$("#firstName").text(result.firstName);
+						$("#middleName").text(result.middleName);
+						$("#lastName").text(result.lastName);
+						$("#dob").text(result.dateOfBirth);
+						$("#gender").text(result.gender);
+						$("#country").text(result.country);
+						$("#phone").text(result.phone);
+						$("#phoneExt").text(result.phoneExt);	
+						$("#address").text(result.address);
+						$("#emailId").text(result.emailId);
+						$("#role").text(result.role);
+						$("#userName").text(result.userName);
+					} 
 				}
 			});
 			resetData();
-		}
+		
 		function resetData() {
 			$("#userName").val("");
 			$("#userPassword").val("");
@@ -206,13 +204,13 @@
 } 
 </style>
 <body>
-<%-- <%
+<%
 		response.setHeader("Cache-Control","no-cache , no-store , must-revalidate");//for back button after logout	
 		if(session.getAttribute("userName")==null)
 		{
 			response.sendRedirect("index.jsp");
 		}	
-%> --%>
+%>
 	<div id="wrapper">
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -295,8 +293,8 @@
 										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2j_EADnakDOXR0E0mq8PH46rdzs2JKCGYqDiu0RFp9oDzgtTx"
 										alt="Basic info">
 										<h3>Basic Info</h3>
-										<h5>Email</h5>
-										<h5>Username<div style="float: right;">Admin</div></h5>
+										<h5>Email<div style="float: right;" id="emailId"></div></h5>
+										<h5>Username<div style="float: right;" id="userName"></div></h5>
 										<div class="text-center">
 											<button class="btn btn-primary" type="submit" onclick="window.location='Register.jsp'">Edit Profile</button>
 										</div>
@@ -309,47 +307,46 @@
 										Information</a></li>
 								<li><a href="#sectionB">Login History</a></li>
 							</ul>
-							<div class="tab-content">
+							<div class="tab-content" id="loginverify">
 								<div id="sectionA" class="tab-pane fade in active">
 									<div class="row">
 										First Name :
-										<div style="float: right">Aishwarya</div>
+										<div style="float: right" id="firstName"></div>
 									</div>
 									<div class="row">
 										Middle Name :
-										<div style="float: right">Sanjay</div>
+										<div style="float: right" id="middleName"></div>
 									</div>
 									<div class="row">
 										Last Name :
-										<div style="float: right">Munde</div>
+										<div style="float: right" id="lastName"></div>
 									</div>
 									<div class="row">
 										Date Of Birth :
-										<div style="float: right">14 October 1997</div>
+										<div style="float: right" id="dob"></div>
 									</div>
 									<div class="row">
 										Gender :
-										<div style="float: right">Female</div>
+										<div style="float: right" id="gender"></div>
 									</div>
 									<div class="row">
 										Country :
-										<div style="float: right">India</div>
+										<div style="float: right" id="country"></div>
 									</div>
 									<div class="row">
 										Phone :
-										<div style="float: right">7391997231</div>
+										<div style="float: right" id="phone"></div>
 									</div>
 									<div class="row">
 										Phone + Ext :
-										<div style="float: right">(+91)7391997231</div>
+										<div style="float: right" id="phoneExt"></div>
 									</div>
 									<div class="row">
 										Address :
-										<div style="float: right">Swargate, Pune</div>
+										<div style="float: right" id="address"></div>
 									</div>
 								</div>
 								<div id="sectionB" class="tab-pane fade">
-
 									<p>
 										<ion-icon name="time"></ion-icon>
 										Login history is displayed prior to the last login
