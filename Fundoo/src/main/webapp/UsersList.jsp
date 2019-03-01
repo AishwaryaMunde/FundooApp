@@ -5,11 +5,11 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </head>
 <style>
 .top-nav {
@@ -277,13 +277,7 @@ tr>td>img {
 						</div>
 					</div>
 					<div class="container">
-						<div class="well">
-							<!-- <div style="float: right;"> -->
-								<button class="btn btn-primary" type="submit" onclick="window.location='Register.jsp'" style="float: right;">New User</button>						
-								<input class="form-control" id="myInput" type="text"
-									placeholder="Search.." style="float: right; width: 250px;" > <br>
-							<!-- </div> -->
-							<table class="table table-bordered table-striped" id="tableData">
+					`	<table class="table table-bordered table-striped" id="myTable">
 								<thead>
 									<tr>
 										<th data-field=""></th>
@@ -296,49 +290,12 @@ tr>td>img {
 										<th data-field="Action">Action</th>
 									</tr>
 								</thead>
-								<tbody id="myTable">
-									<tr>
-										<td><img
-											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
-										<td>Aishwarya Munde</td>
-										<td>kccaishwarya2012@gmail.com</td>
-										<td>14/10/1997</td>
-										<td>Inactive</td>
-										<td>Admin</td>
-										<td></td>
-										<td><button type="button" id="edit" style="background-color: white; border-radius: none"><i class="glyphicon glyphicon-edit"></i></button>
-										<button type="button" id="delete" style="background-color: white;"><ion-icon name="trash"></ion-icon></button></td>
-									</tr>
-									<tr>
-										<td><img
-											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_wof_s7pgp3vkC1Y45Jk4AFtpdT_5cmPXauft4KyrgGo_EYcFg"></td>
-										<td id="Akhil">Akhil</td>
-										<td>akhil.akkineni@gmail.com</td>
-										<td>14/10/1990</td>
-										<td>online</td>
-										<td>Admin</td>
-										<td></td>
-										<td><button type="button" id="edit" style="background-color: white; border-radius: none"><i class="glyphicon glyphicon-edit"></i></button>
-										<button type="button" id="delete" style="background-color: white;"><ion-icon name="trash"></ion-icon></button></td>
-									</tr>
-								</tbody>
-							</table>	
-							<!-- <script type="text/javascript">
-							   $(document).ready(function(){
-								    $("#tableData").load("http://localhost:8080/Fundoo/fetchUsers" );
-								});
-							</script> -->		
-						</div>						
-					</div>					
+							</table>
+					</div>
 					<script>
-						$(document).ready(function(){
-						  $("#myInput").on("keyup", function() {
-						    var value = $(this).val().toLowerCase();
-						    $("#myTable tr").filter(function() {
-						      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-						    });
-						  });
-						});
+						$(document).ready( function () {
+						    $('#myTable').DataTable();
+						} );
 					</script>
 				</div>
 			</div>

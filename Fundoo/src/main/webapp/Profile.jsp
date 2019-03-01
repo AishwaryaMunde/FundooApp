@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +37,7 @@
 						$("#emailId").text(result.emailId);
 						$("#role").text(result.role);
 						$("#userName").text(result.userName);
+						$("#imgPath").text(result.imgPath); 
 					} 
 				}
 			});
@@ -281,10 +283,8 @@
 						<div class="col-md-5 ">
 							<div class="media">
 								<div class="thumbnail">
-									Picture <img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2j_EADnakDOXR0E0mq8PH46rdzs2JKCGYqDiu0RFp9oDzgtTx"
-										alt="Basic info">
-										<h3>Basic Info</h3>
+									Picture <img id="imgPath" alt="Basic info" src="https://khaosland.files.wordpress.com/2015/07/suspension-bridge-into-the-jungle-nakhon-nayok.jpg"><!-- Photos/Aishu.jpg  -->
+										<h3>Basic Info</h3> <!--  /home/admin1/Desktop/FundooApp/Fundoo/src/main/webapp/Photos-->
 										<h5>Email<div style="float: right;" id="emailId"></div></h5>
 										<h5>Username<div style="float: right;" id="userName"></div></h5>
 										<div class="text-center">

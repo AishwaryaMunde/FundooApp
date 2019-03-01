@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bridgelabz.fundooapp.dao.UserDaoImpl;
-import com.bridgelabz.fundooapp.model.UserLogin;
+import com.bridgelabz.fundooapp.dto.UserLogin;
 import com.bridgelabz.fundooapp.model.Userdata;
 import com.bridgelabz.fundooapp.utility.Utility;
 

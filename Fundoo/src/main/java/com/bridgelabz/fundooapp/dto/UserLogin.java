@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooapp.model;
+package com.bridgelabz.fundooapp.dto;
 
 public class UserLogin {
 	
