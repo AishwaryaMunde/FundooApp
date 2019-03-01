@@ -6,7 +6,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="Dashboard.css">
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 
 </head>

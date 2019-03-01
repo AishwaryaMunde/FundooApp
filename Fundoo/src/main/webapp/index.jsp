@@ -38,7 +38,6 @@
 															"application/json");
 												},
 												success : function(result) {													
-													console.log("adfdf");													
 													   if (result.status == "done") {
 														localStorage.setItem('id',result.id);
 														window.location.assign("http://localhost:8080/Fundoo/Dashboard.jsp");

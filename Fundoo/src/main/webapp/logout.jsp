@@ -15,11 +15,10 @@
 <script>
 	$(document).ready(function() {
 		localStorage.clear();
-		location.href("index.jsp");
+		window.location.assign("http://localhost:8080/Fundoo/index.jsp");
 	})
 </script>
 </head>
 <body>
-
 </body>
 </html>
