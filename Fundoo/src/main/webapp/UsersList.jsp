@@ -11,6 +11,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </head>
+<script>
+	$(document).ready(function() {
+			$.ajax({
+				type : "GET",
+				contentType : "application/json",
+				url : "http://localhost:8080/Fundoo/fetchUsers",
+				dataType : 'json',
+				
+				success : function(result) {					
+					console.log(result);					
+					if(result.status="done")
+					{
+						console.log("inside if");
+						for(var i=0;i<result.length;i++)
+				           {
+				             var Html="<tr><td></<tr></td><td>"+result[i].userName+"</td><td>"+result[i].emailId+
+				             "</td><td>"+result[i].dateOfBirth+"</td><td></td><td>"+result[i].role+
+				             "</td><td></td><td></td></tr>";
+				            $('#tbody').append(Html);
+				           }						
+					} 
+				}
+			});
+			resetData();
+		
+		function resetData() {
+			$("#userName").val("");
+			$("#userPassword").val("");
+		}
+	})
+</script>
 <style>
 .top-nav {
 	padding: 0 15px;
@@ -191,15 +222,6 @@ tr>td>img {
 	padding: 10px;
 	margin : 10px;
 }
-/* .well>button{
-	float: right;
-}
-.well .form-control {
-	float: right;
-	height : 35px;
-	width: 200px;
-	margin : 13px;
-} */
 </style>
 <body>
 	<div id="wrapper">
@@ -277,6 +299,9 @@ tr>td>img {
 						</div>
 					</div>
 					<div class="container">
+					<button class="btn btn-primary" type="submit" onclick="window.location='Register.jsp'" style="float: right;">New User</button>						
+								<input class="form-control" id="myInput" type="text"
+									placeholder="Search.." style="float: right; width: 250px;" > <br>
 					`	<table class="table table-bordered table-striped" id="myTable">
 								<thead>
 									<tr>
@@ -290,7 +315,20 @@ tr>td>img {
 										<th data-field="Action">Action</th>
 									</tr>
 								</thead>
+								<tbody id="tbody">
+								
+								</tbody>
 							</table>
+							<script>
+								$(document).ready(function(){
+								  $("#myInput").on("keyup", function() {
+								    var value = $(this).val().toLowerCase();
+								    $("#myTable tr").filter(function() {
+								      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+								    });
+								  });
+								});
+							</script>
 					</div>
 					<script>
 						$(document).ready( function () {

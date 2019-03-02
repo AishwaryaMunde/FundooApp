@@ -1,12 +1,14 @@
 package com.bridgelabz.fundooapp.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.bridgelabz.fundooapp.dao.UserDaoImpl;
+import com.bridgelabz.fundooapp.dto.TableUsersData;
 import com.bridgelabz.fundooapp.dto.UserLogin;
 import com.bridgelabz.fundooapp.model.Userdata;
 import com.bridgelabz.fundooapp.utility.Utility;
@@ -45,9 +47,15 @@ public class UserServiceImpl implements IUserService{
 		return emailId;
 	}
 
-	public List fetchAllUserData() {
-		List list = dao.fetchAllUsers();
-		System.out.println("in service : " +list);
+	public List<TableUsersData> fetchAllUserData() {
+		List<Userdata> userList= dao.fetchAllUsers();
+		
+		ModelMapper mapper = new ModelMapper();
+		List<TableUsersData> list = new ArrayList<TableUsersData>();
+		for (int i = 0; i < userList.size(); i++) {
+			list.add(mapper.map(userList.get(i), TableUsersData.class));
+
+		}
 		return list;
 	}
 

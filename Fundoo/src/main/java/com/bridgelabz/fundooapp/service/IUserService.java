@@ -19,7 +19,7 @@ public interface IUserService {
 
 	public String forgetPassword(String emailId);
 
-	public List fetchAllUserData();
+	public List<TableUsersData> fetchAllUserData();
 
 	public Userdata getUserInfo(int id);
 }
